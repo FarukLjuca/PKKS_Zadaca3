@@ -12,9 +12,6 @@ namespace Refactorer
 {
     public partial class frmGraf : Form
     {
-        private System.Drawing.Graphics g;
-        private System.Drawing.Pen olovka = new System.Drawing.Pen(Color.Blue, 2F);
-
         public frmGraf()
         {
             InitializeComponent();
@@ -22,8 +19,19 @@ namespace Refactorer
 
         private void frmGraf_Load(object sender, EventArgs e)
         {
-            g = pbxGraf.CreateGraphics();
-            g.DrawLine(olovka, 0, 0, 50, 50);
+            pnlGraf.Paint += new PaintEventHandler(Crtaj);
+        }
+
+        private void Crtaj(object sender, PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            using (Graphics g = e.Graphics)
+            {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                Pen olovka = new Pen(Color.Black, 3);
+                g.DrawLine(olovka, 0, 0, 100, 100);
+                g.DrawEllipse(olovka, 50, 50, 50, 50);
+            }
         }
     }
 }

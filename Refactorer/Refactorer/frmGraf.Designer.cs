@@ -28,34 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbxGraf = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxGraf)).BeginInit();
+            this.pnlGraf = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // pbxGraf
+            // pnlGraf
             // 
-            this.pbxGraf.Location = new System.Drawing.Point(12, 12);
-            this.pbxGraf.Name = "pbxGraf";
-            this.pbxGraf.Size = new System.Drawing.Size(260, 238);
-            this.pbxGraf.TabIndex = 0;
-            this.pbxGraf.TabStop = false;
+            this.pnlGraf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGraf.Location = new System.Drawing.Point(0, 0);
+            this.pnlGraf.Name = "pnlGraf";
+            this.pnlGraf.Size = new System.Drawing.Size(284, 262);
+            this.pnlGraf.TabIndex = 0;
             // 
             // frmGraf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.pbxGraf);
+            this.Controls.Add(this.pnlGraf);
             this.Name = "frmGraf";
             this.Text = "Graf";
             this.Load += new System.EventHandler(this.frmGraf_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxGraf)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbxGraf;
+        private System.Windows.Forms.Panel pnlGraf;
+
     }
 }
