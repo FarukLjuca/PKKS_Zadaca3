@@ -69,11 +69,11 @@ namespace Refactorer
                 {
                     graf.Add("elseif");
                 }
-                else if (Kod[i] == 'i' && Kod[i + 1] == 'f' && ((i > 0 && Kod[i - 2] != 'e') || i == 0))
+                else if (Kod[i] == 'i' && Kod[i + 1] == 'f' && ((i > 0 && Kod[i - 2] != 'e') || i == 0)/* && (Kod[i+2] == '(' || Kod[i+3] == '(')*/)
                 {
                     graf.Add("if");
                 }
-                else if (Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 5] != 'i')
+                else if (Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 5] != 'i'/* && (Kod[i + 4] == '(' || Kod[i + 5] == '(')*/)
                 {
                     graf.Add("else");
                 }

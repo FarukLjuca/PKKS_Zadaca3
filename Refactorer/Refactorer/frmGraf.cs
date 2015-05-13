@@ -58,7 +58,7 @@ namespace Refactorer
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         visina -= 80;
                     }
-                    else if (komanda == "elseif")
+                    else if (komanda == "elseif" || komanda == "else")
                     {
                         if (brojElsa == 0)
                         {
@@ -92,11 +92,46 @@ namespace Refactorer
 
                             brojElsa++;
                         }
+                        else if (brojElsa == 2)
+                        {
+                            g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
+
+                            g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
+                            g.DrawLine(olovka, sredina - 45, visina + 40, sredina - 65, visina + 33);
+                            g.DrawLine(olovka, sredina - 45, visina + 40, sredina - 58, visina + 40);
+                            visina += 40;
+
+                            //g.DrawLine(olovka, sredina - 25, visina + 20, sredina, visina + 45);
+                            //g.DrawLine(olovka, sredina, visina + 45, sredina, visina + 38);
+                            //g.DrawLine(olovka, sredina, visina + 45, sredina - 7, visina + 45);
+                            //visina -= 40;
+
+                            brojElsa++;
+                        }
+                        else if (brojElsa == 3)
+                        {
+                            g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
+
+                            g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
+                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 45, visina + 33);
+                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 38, visina + 40);
+                            visina += 40;
+
+                            g.DrawLine(olovka, sredina + 45, visina + 20, sredina + 20, visina + 45);
+                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 20, visina + 38);
+                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 27, visina + 45);
+                            visina -= 40;
+
+                            brojElsa++;
+                        }
+                        else if (brojElsa == 4)
+                        {
+                            MessageBox.Show("Niste postovali pravila o maksimalno 5 if else struktura");
+                            this.Close();
+                        }
                     }
-                    else if (komanda == "else")
+                    if (komanda == "else")
                     {
-
-
                         brojElsa = 0;
                     }
                 }
