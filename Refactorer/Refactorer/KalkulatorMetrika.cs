@@ -65,7 +65,7 @@ namespace Refactorer
 
             for (int i = 0; i < Kod.Length; i++)
             {
-                if (Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 4] == ' ' && Kod[i + 5] == 'i' && Kod[i + 6] == 'f')
+                if (i < Kod.Length-4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 4] == ' ' && Kod[i + 5] == 'i' && Kod[i + 6] == 'f')
                 {
                     graf.Add("elseif");
                 }

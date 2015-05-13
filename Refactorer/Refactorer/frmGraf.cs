@@ -16,6 +16,7 @@ namespace Refactorer
 
         // Kako bi se znao na kojem nivou crtanja je graf
         private int visina = 10;
+        private bool prviIf = true;
 
         // Sredina crteza, izvucena u varijablu kako bi se lakse mogla mijenjati ako bi se zahtjevao sir crtez
         private int sredina = 130;
@@ -43,6 +44,17 @@ namespace Refactorer
                 foreach (String komanda in graf)
                 {
                     if (komanda == "if") {
+
+                        if (prviIf != true)
+                        {
+                            visina += 120;
+
+                            g.DrawLine(olovka, sredina + 10, visina - 20, sredina + 10, visina);
+                            g.DrawLine(olovka, sredina + 10, visina, sredina + 5, visina - 5);
+                            g.DrawLine(olovka, sredina + 10, visina, sredina + 15, visina - 5);
+                        }
+                        prviIf = false;
+
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         g.DrawLine(olovka, sredina+10, visina + 20, sredina+10, visina + 40);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
@@ -97,14 +109,14 @@ namespace Refactorer
                             g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
-                            g.DrawLine(olovka, sredina - 45, visina + 40, sredina - 65, visina + 33);
-                            g.DrawLine(olovka, sredina - 45, visina + 40, sredina - 58, visina + 40);
+                            g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 62, visina + 33);
+                            g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 56, visina + 42);
                             visina += 40;
 
-                            //g.DrawLine(olovka, sredina - 25, visina + 20, sredina, visina + 45);
-                            //g.DrawLine(olovka, sredina, visina + 45, sredina, visina + 38);
-                            //g.DrawLine(olovka, sredina, visina + 45, sredina - 7, visina + 45);
-                            //visina -= 40;
+                            g.DrawLine(olovka, sredina - 65, visina + 20, sredina, visina + 50);
+                            //g.DrawLine(olovka, sredina, visina + 50, sredina-2, visina + 35);
+                            g.DrawLine(olovka, sredina, visina + 50, sredina - 7, visina + 53);
+                            visina -= 40;
 
                             brojElsa++;
                         }
@@ -112,14 +124,14 @@ namespace Refactorer
                         {
                             g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
 
-                            g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
-                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 45, visina + 33);
-                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 38, visina + 40);
+                            g.DrawLine(olovka, sredina + 20, visina + 10, sredina + 85, visina + 40);
+                            g.DrawLine(olovka, sredina + 85, visina + 40, sredina + 83, visina + 33);
+                            g.DrawLine(olovka, sredina + 85, visina + 40, sredina + 76, visina + 42);
                             visina += 40;
 
-                            g.DrawLine(olovka, sredina + 45, visina + 20, sredina + 20, visina + 45);
-                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 20, visina + 38);
-                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 27, visina + 45);
+                            g.DrawLine(olovka, sredina + 85, visina + 20, sredina + 20, visina + 50);
+                            //g.DrawLine(olovka, sredina + 20, visina + 50, sredina + 20, visina + 68);
+                            g.DrawLine(olovka, sredina + 20, visina + 50, sredina + 27, visina + 53);
                             visina -= 40;
 
                             brojElsa++;
