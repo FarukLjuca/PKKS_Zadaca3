@@ -27,7 +27,6 @@ namespace Refactorer
             tbxKod.Text = i.ToString();
             //i += new Regex(@"\bwhile\s*\(").Matches(inputneki).ToString();
 
-            // Radi li ovaj git XD
         }
     }
 }
