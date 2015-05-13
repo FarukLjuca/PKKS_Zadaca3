@@ -41,12 +41,17 @@ namespace Refactorer
             //frmGraf forma = new frmGraf();
             //forma.Show();
 
-            List<string> tekst = kalkulator.DajGraf();
+            List<string> komande = kalkulator.DajGraf();
 
+            frmGraf forma = new frmGraf(komande);
+            forma.Show();
+
+             /*
             foreach (string s in tekst)
             {
                 MessageBox.Show(s);
             }
+              * */
         }
     }
 }

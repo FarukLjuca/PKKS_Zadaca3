@@ -12,9 +12,17 @@ namespace Refactorer
 {
     public partial class frmGraf : Form
     {
-        public frmGraf()
+        private List<String> graf;
+
+        // Kako bi se znao na kojem nivou crtanja je graf
+        private int visina = 10;
+
+        // Sredina crteza, izvucena u varijablu kako bi se lakse mogla mijenjati ako bi se zahtjevao sir crtez
+        private int sredina = 130;
+        public frmGraf(List<String> graf)
         {
             InitializeComponent();
+            this.graf = graf;
         }
 
         private void frmGraf_Load(object sender, EventArgs e)
@@ -29,8 +37,72 @@ namespace Refactorer
             {
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 Pen olovka = new Pen(Color.Black, 3);
-                g.DrawLine(olovka, 0, 0, 100, 100);
-                g.DrawEllipse(olovka, 50, 50, 50, 50);
+
+                int brojElsa = 0;
+
+                foreach (String komanda in graf)
+                {
+                    if (komanda == "if") {
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina+10, visina + 20, sredina+10, visina + 40);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
+                        visina += 40;
+
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
+                        visina += 40;
+
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        visina -= 80;
+                    }
+                    else if (komanda == "elseif")
+                    {
+                        if (brojElsa == 0)
+                        {
+                            g.DrawEllipse(olovka, sredina - 40, visina + 40, 20, 20);
+
+                            g.DrawLine(olovka, sredina, visina + 15, sredina - 25, visina + 40);
+                            g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 25, visina + 33);
+                            g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 18, visina + 40);
+                            visina += 40;
+
+                            g.DrawLine(olovka, sredina - 25, visina + 20, sredina, visina + 45);
+                            g.DrawLine(olovka, sredina, visina + 45, sredina, visina + 38);
+                            g.DrawLine(olovka, sredina, visina + 45, sredina - 7, visina + 45);
+                            visina -= 40;
+
+                            brojElsa++;
+                        }
+                        else if (brojElsa == 1)
+                        {
+                            g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
+
+                            g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
+                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 45, visina + 33);
+                            g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 38, visina + 40);
+                            visina += 40;
+
+                            g.DrawLine(olovka, sredina + 45, visina + 20, sredina + 20, visina + 45);
+                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 20, visina + 38);
+                            g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 27, visina + 45);
+                            visina -= 40;
+
+                            brojElsa++;
+                        }
+                    }
+                    else if (komanda == "else")
+                    {
+
+
+                        brojElsa = 0;
+                    }
+                }
+
+                //g.DrawLine(olovka, 0, 0, 100, 100);
+                //g.DrawEllipse(olovka, 50, 50, 50, 50);
             }
         }
     }
