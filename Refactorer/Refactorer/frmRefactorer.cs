@@ -33,5 +33,11 @@ namespace Refactorer
 
             MessageBox.Show(pravila);
         }
+
+        private void btnGraf_Click(object sender, EventArgs e)
+        {
+            frmGraf forma = new frmGraf();
+            forma.Show();
+        }
     }
 }

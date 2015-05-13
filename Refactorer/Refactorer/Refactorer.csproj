@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGraf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraf.Designer.cs">
+      <DependentUpon>frmGraf.cs</DependentUpon>
+    </Compile>
     <Compile Include="KalkulatorMetrika.cs" />
     <Compile Include="frmRefactorer.cs">
       <SubType>Form</SubType>
@@ -54,6 +60,9 @@
     <Compile Include="McCabeRezultat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGraf.resx">
+      <DependentUpon>frmGraf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRefactorer.resx">
       <DependentUpon>frmRefactorer.cs</DependentUpon>
     </EmbeddedResource>

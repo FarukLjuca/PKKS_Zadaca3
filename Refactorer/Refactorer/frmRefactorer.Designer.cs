@@ -36,6 +36,7 @@
             this.btnInformacioniTok = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.llbPravila = new System.Windows.Forms.LinkLabel();
+            this.btnGraf = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btnGraf);
             this.groupBox2.Controls.Add(this.llbPravila);
             this.groupBox2.Controls.Add(this.btnMcCabe);
             this.groupBox2.Controls.Add(this.btnInformacioniTok);
@@ -121,6 +123,16 @@
             this.llbPravila.TabStop = true;
             this.llbPravila.Text = "Pravila programskog modula";
             this.llbPravila.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbPravila_LinkClicked);
+            // 
+            // btnGraf
+            // 
+            this.btnGraf.Location = new System.Drawing.Point(6, 132);
+            this.btnGraf.Name = "btnGraf";
+            this.btnGraf.Size = new System.Drawing.Size(199, 23);
+            this.btnGraf.TabIndex = 5;
+            this.btnGraf.Text = "Nacrtaj graf";
+            this.btnGraf.UseVisualStyleBackColor = true;
+            this.btnGraf.Click += new System.EventHandler(this.btnGraf_Click);
             // 
             // frmRefactorer
             // 
@@ -151,6 +163,7 @@
         private System.Windows.Forms.Button btnInformacioniTok;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.LinkLabel llbPravila;
+        private System.Windows.Forms.Button btnGraf;
     }
 }
 
