@@ -58,5 +58,25 @@ namespace Refactorer
 
             return brojUslova;
         }
+
+        public List<String> DajGraf()
+        {
+            List<String> graf = new List<string>();
+
+            for (int i = 0; i < Kod.Length; i++)
+            {
+                if (Kod[i] == 'i' && Kod[i + 1] == 'f')
+                {
+                    graf.Add("if");
+                }
+
+                if (Kod[i] == '}')
+                {
+                    graf.Add("endif");
+                }
+            }
+
+            return graf;
+        }
     }
 }

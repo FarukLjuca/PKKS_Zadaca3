@@ -36,8 +36,17 @@ namespace Refactorer
 
         private void btnGraf_Click(object sender, EventArgs e)
         {
-            frmGraf forma = new frmGraf();
-            forma.Show();
+            KalkulatorMetrika kalkulator = new KalkulatorMetrika(tbxKod.Text);
+
+            //frmGraf forma = new frmGraf();
+            //forma.Show();
+
+            List<string> tekst = kalkulator.DajGraf();
+
+            foreach (string s in tekst)
+            {
+                MessageBox.Show(s);
+            }
         }
     }
 }
