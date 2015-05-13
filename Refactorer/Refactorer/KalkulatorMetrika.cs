@@ -23,7 +23,7 @@ namespace Refactorer
             // Budući da je u zadatku naglašeno da se ispituje metrika jedne funkcije, njen broj neovisnih dijelova je uvijek 1
             rezultat.BrojNeovisnihDjelova = 1;
 
-            rezultat.BrojCvorova = DajBrojPetlji();
+            rezultat.Kompleksnost = DajBrojUslovnihGrananjaBezElse() + DajBrojPetlji();
 
             return rezultat;
         }
@@ -44,15 +44,19 @@ namespace Refactorer
             return brojPetlji;
         }
 
-        private int DajBrojIfUslova()
+        private int DajBrojUslovnihGrananjaBezElse()
         {
-            int brojIfUslova = 0;
+            // Bez else je jer else ne utice na McCabe metriku
+            int brojUslova = 0;
 
-            Regex patern = new Regex(@"\bIf *\(");
-            brojIfUslova += patern.Matches(Kod).Count;
+            //Broji i if i else if, buduci da je oboma utican na metriku +1, to je prihvatljivo
+            Regex patern = new Regex(@"\bif *\(");
+            brojUslova += patern.Matches(Kod).Count;
 
+            patern = new Regex(@"\bcase\b");
+            brojUslova += patern.Matches(Kod).Count;
 
-            return brojIfUslova;
+            return brojUslova;
         }
     }
 }

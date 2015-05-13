@@ -23,13 +23,15 @@ namespace Refactorer
             KalkulatorMetrika kalkulator = new KalkulatorMetrika(tbxKod.Text);
             McCabeRezultat rezultat = kalkulator.DajMcCabePodatke();
 
-            MessageBox.Show(rezultat.BrojCvorova.ToString());
+            MessageBox.Show("McCabe kompleksnost koda koji ste unijeli iznosi: " + rezultat.Kompleksnost.ToString());
         }
 
         private void llbPravila_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //TODO: Enil: sta ovdje treba da se desava, nova forma sa tekstom?
-            //TODO: Dodati u pravila da se petlje i if uslovi moraju stavljati u viticastim zagradama, cak i ako je jedna linija
+            String pravila = "Pravila za korištenje programa:\n\n" +
+                "1. Sve tijela petlji i uslovnih grananja moraju biti ograničeni vitičastim zagradama, čak i ako su jednolinijski.";
+
+            MessageBox.Show(pravila);
         }
     }
 }
