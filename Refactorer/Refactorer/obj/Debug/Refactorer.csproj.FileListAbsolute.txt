@@ -2,8 +2,8 @@ C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Ref
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\bin\Debug\Refactorer.exe
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\bin\Debug\Refactorer.pdb
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.csprojResolveAssemblyReference.cache
-C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.Form1.resources
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.Properties.Resources.resources
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.csproj.GenerateResource.Cache
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.exe
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.pdb
+C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.frmRefactorer.resources

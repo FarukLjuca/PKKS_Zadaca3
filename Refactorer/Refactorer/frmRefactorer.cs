@@ -22,16 +22,14 @@ namespace Refactorer
         {
             KalkulatorMetrika kalkulator = new KalkulatorMetrika(tbxKod.Text);
             McCabeRezultat rezultat = kalkulator.DajMcCabePodatke();
-            //Regex r = new Regex(@"\bfor *\(");
-            //var i = r.Matches ("for                    (int i...) foreach for( int forever = 1;").Count;
-            //tbxKod.Text = i.ToString();
-            //i += new Regex(@"\bwhile\s*\(").Matches(inputneki).ToString();
 
+            MessageBox.Show(rezultat.BrojCvorova.ToString());
         }
 
         private void llbPravila_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //TODO: Enil: sta ovdje treba da se desava, nova forma sa tekstom?
+            //TODO: Dodati u pravila da se petlje i if uslovi moraju stavljati u viticastim zagradama, cak i ako je jedna linija
         }
     }
 }
