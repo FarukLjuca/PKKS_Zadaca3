@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlGraf = new System.Windows.Forms.Panel();
-            this.SuspendLayout();
-            // 
-            // pnlGraf
-            // 
-            this.pnlGraf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGraf.Location = new System.Drawing.Point(0, 0);
-            this.pnlGraf.Name = "pnlGraf";
-            this.pnlGraf.Size = new System.Drawing.Size(284, 262);
-            this.pnlGraf.TabIndex = 0;
-            // 
-            // frmGraf
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.pnlGraf);
-            this.Name = "frmGraf";
-            this.Text = "Graf";
-            this.Load += new System.EventHandler(this.frmGraf_Load);
-            this.ResumeLayout(false);
+			this.pnlGraf = new Refactorer.SpecPanel();
+			this.SuspendLayout();
+			// 
+			// pnlGraf
+			// 
+			this.pnlGraf.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlGraf.Location = new System.Drawing.Point(0, 0);
+			this.pnlGraf.Name = "pnlGraf";
+			this.pnlGraf.Size = new System.Drawing.Size(321, 348);
+			this.pnlGraf.TabIndex = 0;
+			// 
+			// frmGraf
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(321, 348);
+			this.Controls.Add(this.pnlGraf);
+			this.Name = "frmGraf";
+			this.Text = "Graf";
+			this.Load += new System.EventHandler(this.frmGraf_Load);
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlGraf;
+        private SpecPanel pnlGraf;
 
     }
 }

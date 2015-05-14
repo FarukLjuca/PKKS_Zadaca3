@@ -14,12 +14,6 @@ namespace Refactorer
     {
         private List<String> graf;
 
-        // Kako bi se znao na kojem nivou crtanja je graf
-        private int visina = 10;
-        private bool prviIf = true;
-
-        // Sredina crteza, izvucena u varijablu kako bi se lakse mogla mijenjati ako bi se zahtjevao sir crtez
-        private int sredina = 130;
         public frmGraf(List<String> graf)
         {
             InitializeComponent();
@@ -30,39 +24,35 @@ namespace Refactorer
         {
             pnlGraf.Paint += new PaintEventHandler(Crtaj);
         }
+		/// <summary>
+		/// Čisto da vidimo da li je bolje kad se popuni :D
+		/// </summary>
+		bool popuni = true;
+		
+		private void Popuni(Graphics g, int x, int y, int w = 20, int h = 20)
+		{
+			Brush boja = new System.Drawing.Drawing2D.LinearGradientBrush(
+				new Rectangle (x, y, w, h),
+				Color.DarkGreen, Color.Yellow,
+				System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal);
+			g.FillEllipse (boja, x, y, w, h);
+		}
 
         private void Crtaj(object sender, PaintEventArgs e)
         {
-            base.OnPaint(e);
-            using (Graphics g = e.Graphics)
+			Graphics g = e.Graphics;
+			int sredina = e.ClipRectangle.Width / 2;
+			bool prviIf = true;
+			int visina = 20;
             {
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 Pen olovka = new Pen(Color.Black, 3);
 
                 int brojElsa = 0;
-                bool provjeriSljedeci = false;
 
-                for (int i = 0; i < graf.Count; i++ )
+                foreach (String komanda in graf)
                 {
-                    if (provjeriSljedeci == true)
-                    {
-                        if (graf[i] == "end")
-                        {
-                            continue;
-                        }
-                        else if (graf[i] != "else" && graf[i] != "elseif")
-                        {
-                            g.DrawArc(olovka, sredina - 25, visina + 10, 50, 80, 90, 180);
-                            g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 95);
-                            g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 83);
-                        }
-                    }
-                    provjeriSljedeci = false;
-
-                    if (graf[i] == "if")
-                    {
-                        provjeriSljedeci = true;
-                        brojElsa = 0;
+                    if (komanda == "if") {
 
                         if (prviIf != true)
                         {
@@ -73,28 +63,28 @@ namespace Refactorer
                             g.DrawLine(olovka, sredina + 10, visina, sredina + 15, visina - 5);
                         }
                         prviIf = false;
+						Popuni (g, sredina, visina); //dodati i parametre ako se promijeni ovo 20, 20
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina+10, visina + 20, sredina+10, visina + 40);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
+                        visina += 40;
 
+						Popuni (g, sredina, visina); //dodati i parametre ako se promijeni ovo 20, 20
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
                         visina += 40;
-
-                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
-                        g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
-                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
-                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
-                        visina += 40;
-
+						Popuni (g, sredina, visina); //dodati i parametre ako se promijeni ovo 20, 20
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         visina -= 80;
                     }
-                    else if (graf[i] == "elseif" || graf[i] == "else")
+                    else if (komanda == "elseif" || komanda == "else")
                     {
-                        provjeriSljedeci = false;
-
                         if (brojElsa == 0)
                         {
+							Popuni (g, sredina - 40, visina + 40); //dodati i parametre ako se promijeni ovo 20, 20
                             g.DrawEllipse(olovka, sredina - 40, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina, visina + 15, sredina - 25, visina + 40);
@@ -111,6 +101,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 1)
                         {
+							Popuni (g, sredina + 40, visina + 40); //dodati i parametre ako se promijeni ovo 20, 20
                             g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
@@ -127,6 +118,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 2)
                         {
+							Popuni (g, sredina - 80, visina + 40); //dodati i parametre ako se promijeni ovo 20, 20
                             g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
@@ -143,6 +135,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 3)
                         {
+							Popuni (g, sredina + 80, visina + 40); //dodati i parametre ako se promijeni ovo 20, 20
                             g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina + 20, visina + 10, sredina + 85, visina + 40);
@@ -163,18 +156,12 @@ namespace Refactorer
                             this.Close();
                         }
                     }
-                    if (graf[graf.Count - 1] == "if" && i == graf.Count - 1)
-                    {
-                        g.DrawArc(olovka, sredina - 25, visina + 10, 50, 80, 90, 180);
-                        g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 95);
-                        g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 83);
-                    }
-                    if (graf[i] == "else")
+                    if (komanda == "else")
                     {
                         brojElsa = 0;
                     }
                 }
-
+				base.OnPaint (e);
                 //g.DrawLine(olovka, 0, 0, 100, 100);
                 //g.DrawEllipse(olovka, 50, 50, 50, 50);
             }
