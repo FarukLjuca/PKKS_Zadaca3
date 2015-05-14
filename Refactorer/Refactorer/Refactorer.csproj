@@ -65,6 +65,12 @@
     <Compile Include="FrmMIT.designer.cs">
       <DependentUpon>FrmMIT.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRefact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRefact.designer.cs">
+      <DependentUpon>FrmRefact.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVieww.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMIT.resx">
       <DependentUpon>FrmMIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRefact.resx">
+      <DependentUpon>FrmRefact.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRefactorer.resx">
       <DependentUpon>frmRefactorer.cs</DependentUpon>

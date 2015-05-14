@@ -37,6 +37,7 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btnGraf = new System.Windows.Forms.Button();
 			this.llbPravila = new System.Windows.Forms.LinkLabel();
+			this.BtnRefact = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -103,6 +104,7 @@
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.BtnRefact);
 			this.groupBox2.Controls.Add(this.btnGraf);
 			this.groupBox2.Controls.Add(this.llbPravila);
 			this.groupBox2.Controls.Add(this.btnMcCabe);
@@ -137,6 +139,16 @@
 			this.llbPravila.Text = "Pravila programskog modula";
 			this.llbPravila.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbPravila_LinkClicked);
 			// 
+			// BtnRefact
+			// 
+			this.BtnRefact.Location = new System.Drawing.Point(5, 160);
+			this.BtnRefact.Name = "BtnRefact";
+			this.BtnRefact.Size = new System.Drawing.Size(199, 23);
+			this.BtnRefact.TabIndex = 6;
+			this.BtnRefact.Text = "Refactoring kôda";
+			this.BtnRefact.UseVisualStyleBackColor = true;
+			this.BtnRefact.Click += new System.EventHandler(this.BtnRefact_Click);
+			// 
 			// frmRefactorer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +179,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.LinkLabel llbPravila;
         private System.Windows.Forms.Button btnGraf;
+		private System.Windows.Forms.Button BtnRefact;
     }
 }
 

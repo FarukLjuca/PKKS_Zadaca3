@@ -72,5 +72,10 @@ namespace Refactorer
 		{
 			new FrmMIT (tbxKod.Text).ShowDialog (this);
 		}
+
+		private void BtnRefact_Click(object sender, EventArgs e)
+		{
+			new FrmRefact (tbxKod.Text).ShowDialog (this);
+		}
     }
 }
