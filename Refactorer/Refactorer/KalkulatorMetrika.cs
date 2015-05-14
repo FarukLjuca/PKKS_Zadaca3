@@ -63,23 +63,58 @@ namespace Refactorer
         {
             List<String> graf = new List<string>();
 
+            bool pocelaPetlja = false;
+            int tijeloPetlje = 0;
+            bool imaCase = false;
+
             for (int i = 0; i < Kod.Length; i++)
             {
-                if (i < Kod.Length-4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 4] == ' ' && Kod[i + 5] == 'i' && Kod[i + 6] == 'f')
+                if (Kod[i] == 'c' && Kod[i+1] == 'a' && Kod[i+2] == 's' && Kod[i+3] == 'e')
+                {
+                    graf.Add("case");
+                    imaCase = true;
+                }
+                else if ((Kod[i] == 'f' && Kod[i + 1] == 'o' && Kod[i + 2] == 'r') ||
+                    (Kod[i] == 'w' && Kod[i+1] == 'h' && Kod[i+2] == 'i' && Kod[i+3] == 'l'&& Kod[i+4] == 'e') ||
+                    (Kod[i] == 'f' && Kod[i+1] == 'o' && Kod[i+2] == 'r' && Kod[i+3] == 'e'&& Kod[i+4] == 'a' && Kod[i+5] == 'c' && Kod[i+6] == 'h'))
+                {
+                    graf.Add("petlja");
+                    pocelaPetlja = true;
+                    tijeloPetlje++;
+                }
+                else if (i < Kod.Length-4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 4] == ' ' && Kod[i + 5] == 'i' && Kod[i + 6] == 'f')
                 {
                     graf.Add("elseif");
+                    if (pocelaPetlja)
+                        tijeloPetlje++;
                 }
                 else if (Kod[i] == 'i' && Kod[i + 1] == 'f' && ((i > 0 && Kod[i - 2] != 'e') || i == 0)/* && (Kod[i+2] == '(' || Kod[i+3] == '(')*/)
                 {
                     graf.Add("if");
+                    if (pocelaPetlja)
+                        tijeloPetlje++;
                 }
-                else if (Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e' && Kod[i + 5] != 'i'/* && (Kod[i + 4] == '(' || Kod[i + 5] == '(')*/)
+                else if (i < Kod.Length - 4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e'/* && (Kod[i + 4] == '(' || Kod[i + 5] == '(')*/)
                 {
-                    graf.Add("else");
+                    if (Kod[i + 5] != 'i')
+                    {
+                        graf.Add("else");
+                        if (pocelaPetlja)
+                            tijeloPetlje++;
+                    }
                 }
                 else if (Kod[i] == '}')
                 {
                     graf.Add("end");
+                    if (pocelaPetlja)
+                        tijeloPetlje--;
+                    if ((tijeloPetlje == 0 && imaCase == false && pocelaPetlja == true) || (tijeloPetlje == -1 && imaCase == true))
+                    {
+                        graf.Add("endPetlja");
+                        tijeloPetlje = 0;
+                        imaCase = false;
+                        pocelaPetlja = false;
+                    }
                 }
             }
 

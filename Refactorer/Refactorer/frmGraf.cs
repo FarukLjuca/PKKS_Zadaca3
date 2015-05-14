@@ -52,15 +52,22 @@ namespace Refactorer
                 
                 int brojElsa = 0;
                 bool provjeriSljedeci = false;
+                int caseBrojac = 0;
+
                 for (int i = 0; i < graf.Count; i++ )
                 {
+                    if (graf[i] != "case")
+                    {
+                        caseBrojac = 0;
+                    }
+
                     if (provjeriSljedeci == true)
                     {
                         if (graf[i] == "end")
                         {
                             continue;
                         }
-                        else if (graf[i] != "else" && graf[i] != "elseif")
+                        else if (graf[i] != "else" && graf[i] != "elseif" && graf[i] != "case")
                         {
                             g.DrawArc(olovka, sredina - 25, visina + 10, 50, 80, 90, 180);
                             g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 95);
@@ -69,8 +76,9 @@ namespace Refactorer
                     }
                     provjeriSljedeci = false;
 
-                    if (graf[i] == "if")
+                    if (graf[i] == "if" || graf[i] == "case" && caseBrojac == 0)
                     {
+                        caseBrojac++;
                         provjeriSljedeci = true;
                         brojElsa = 0;
 
@@ -101,12 +109,13 @@ namespace Refactorer
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         visina -= 80;
                     }
-                    else if (graf[i] == "elseif" || graf[i] == "else")
+                    else if (graf[i] == "elseif" || graf[i] == "else" || graf[i] == "case")
                     {
                         provjeriSljedeci = false;
 
-                        if (brojElsa == 0)
+                        if (brojElsa == 0 || graf[i] == "case" && caseBrojac == 1)
                         {
+                            caseBrojac++;
                             Popuni(g, sredina - 40, visina + 40);
                             g.DrawEllipse(olovka, sredina - 40, visina + 40, 20, 20);
 
@@ -122,8 +131,9 @@ namespace Refactorer
 
                             brojElsa++;
                         }
-                        else if (brojElsa == 1)
+                        else if (brojElsa == 1 || graf[i] == "case" && caseBrojac == 2)
                         {
+                            caseBrojac++;
                             Popuni(g, sredina + 40, visina + 40);
                             g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
 
@@ -139,8 +149,9 @@ namespace Refactorer
 
                             brojElsa++;
                         }
-                        else if (brojElsa == 2)
+                        else if (brojElsa == 2 || graf[i] == "case" && caseBrojac == 3)
                         {
+                            caseBrojac++;
                             Popuni(g, sredina - 80, visina + 40);
                             g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
 
@@ -156,8 +167,9 @@ namespace Refactorer
 
                             brojElsa++;
                         }
-                        else if (brojElsa == 3)
+                        else if (brojElsa == 3 || graf[i] == "case" && caseBrojac == 4)
                         {
+                            caseBrojac++;
                             Popuni(g, sredina + 80, visina + 40);
                             g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
 
@@ -188,6 +200,33 @@ namespace Refactorer
                     if (graf[i] == "else")
                     {
                         brojElsa = 0;
+                    }
+
+                    if (graf[i] == "petlja")
+                    {
+                        
+                        Popuni(g, sredina, visina);
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
+                        g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
+                        visina += 40;
+                    }
+                    else if (graf[i] == "endPetlja")
+                    {
+                        visina += 120;
+                        Popuni(g, sredina, visina);
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina + 10, visina - 20, sredina + 10, visina);
+                        g.DrawLine(olovka, sredina + 10, visina, sredina + 5, visina - 5);
+                        g.DrawLine(olovka, sredina + 10, visina, sredina + 15, visina - 5);
+
+                        visina += 40;
+                        Popuni(g, sredina, visina);
+                        g.DrawEllipse(olovka, sredina, visina, 20, 20);
+                        g.DrawLine(olovka, sredina + 10, visina - 20, sredina + 10, visina);
+                        g.DrawLine(olovka, sredina + 10, visina, sredina + 5, visina - 5);
+                        g.DrawLine(olovka, sredina + 10, visina, sredina + 15, visina - 5);
                     }
                 
                 }
