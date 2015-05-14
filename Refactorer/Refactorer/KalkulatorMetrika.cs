@@ -61,6 +61,8 @@ namespace Refactorer
 
         public List<String> DajGraf()
         {
+            #region Prosli kod
+            /*
             List<String> graf = new List<string>();
 
             bool pocelaPetlja = false;
@@ -88,13 +90,13 @@ namespace Refactorer
                     if (pocelaPetlja)
                         tijeloPetlje++;
                 }
-                else if (Kod[i] == 'i' && Kod[i + 1] == 'f' && ((i > 0 && Kod[i - 2] != 'e') || i == 0)/* && (Kod[i+2] == '(' || Kod[i+3] == '(')*/)
+                else if (Kod[i] == 'i' && Kod[i + 1] == 'f' && ((i > 0 && Kod[i - 2] != 'e') || i == 0)/* && (Kod[i+2] == '(' || Kod[i+3] == '('))
                 {
                     graf.Add("if");
                     if (pocelaPetlja)
                         tijeloPetlje++;
                 }
-                else if (i < Kod.Length - 4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e'/* && (Kod[i + 4] == '(' || Kod[i + 5] == '(')*/)
+                else if (i < Kod.Length - 4 && Kod[i] == 'e' && Kod[i + 1] == 'l' && Kod[i + 2] == 's' && Kod[i + 3] == 'e'/* && (Kod[i + 4] == '(' || Kod[i + 5] == '('))
                 {
                     if (Kod[i + 5] != 'i')
                     {
@@ -119,6 +121,14 @@ namespace Refactorer
             }
 
             return graf;
+        */
+            # endregion
+
+            List<String> komande = new List<String>();
+
+
+
+            return komande;
         }
     }
 }
