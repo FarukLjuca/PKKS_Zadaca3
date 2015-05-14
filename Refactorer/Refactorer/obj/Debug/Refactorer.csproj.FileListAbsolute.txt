@@ -8,3 +8,5 @@ C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Ref
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.pdb
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.frmRefactorer.resources
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.frmGraf.resources
+C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmHalstead.resources
+C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmVieww.resources

@@ -50,6 +50,19 @@
     <Compile Include="frmGraf.Designer.cs">
       <DependentUpon>frmGraf.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHalstead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHalstead.designer.cs">
+      <DependentUpon>FrmHalstead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVieww.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVieww.designer.cs">
+      <DependentUpon>FrmVieww.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Halstead.cs" />
     <Compile Include="KalkulatorMetrika.cs" />
     <Compile Include="frmRefactorer.cs">
       <SubType>Form</SubType>
@@ -63,8 +76,14 @@
     <EmbeddedResource Include="frmGraf.resx">
       <DependentUpon>frmGraf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHalstead.resx">
+      <DependentUpon>FrmHalstead.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRefactorer.resx">
       <DependentUpon>frmRefactorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVieww.resx">
+      <DependentUpon>FrmVieww.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

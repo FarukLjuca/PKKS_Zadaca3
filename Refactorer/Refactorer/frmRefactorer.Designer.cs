@@ -35,8 +35,8 @@
             this.btnHalstead = new System.Windows.Forms.Button();
             this.btnInformacioniTok = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.llbPravila = new System.Windows.Forms.LinkLabel();
             this.btnGraf = new System.Windows.Forms.Button();
+            this.llbPravila = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,7 @@
             this.btnHalstead.TabIndex = 2;
             this.btnHalstead.Text = "Izračunaj Halstead metriku";
             this.btnHalstead.UseVisualStyleBackColor = true;
+            this.btnHalstead.Click += new System.EventHandler(this.btnHalstead_Click);
             // 
             // btnInformacioniTok
             // 
@@ -112,6 +113,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odaberite akciju:";
             // 
+            // btnGraf
+            // 
+            this.btnGraf.Location = new System.Drawing.Point(6, 132);
+            this.btnGraf.Name = "btnGraf";
+            this.btnGraf.Size = new System.Drawing.Size(199, 23);
+            this.btnGraf.TabIndex = 5;
+            this.btnGraf.Text = "Nacrtaj graf";
+            this.btnGraf.UseVisualStyleBackColor = true;
+            this.btnGraf.Click += new System.EventHandler(this.btnGraf_Click);
+            // 
             // llbPravila
             // 
             this.llbPravila.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -123,16 +134,6 @@
             this.llbPravila.TabStop = true;
             this.llbPravila.Text = "Pravila programskog modula";
             this.llbPravila.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbPravila_LinkClicked);
-            // 
-            // btnGraf
-            // 
-            this.btnGraf.Location = new System.Drawing.Point(6, 132);
-            this.btnGraf.Name = "btnGraf";
-            this.btnGraf.Size = new System.Drawing.Size(199, 23);
-            this.btnGraf.TabIndex = 5;
-            this.btnGraf.Text = "Nacrtaj graf";
-            this.btnGraf.UseVisualStyleBackColor = true;
-            this.btnGraf.Click += new System.EventHandler(this.btnGraf_Click);
             // 
             // frmRefactorer
             // 

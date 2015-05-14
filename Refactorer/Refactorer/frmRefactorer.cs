@@ -53,5 +53,11 @@ namespace Refactorer
             }
               * */
         }
+
+        private void btnHalstead_Click(object sender, EventArgs e)
+        {
+            FrmHalstead forma = new FrmHalstead(tbxKod.Text);
+            forma.Show();
+        }
     }
 }
