@@ -46,3 +46,16 @@ C:\Users\Faruk\Desktop\Refactorer\Refactorer\obj\Debug\Refactorer.frmRefactorer.
 C:\Users\Faruk\Desktop\Refactorer\Refactorer\obj\Debug\Refactorer.FrmVieww.resources
 C:\Users\Faruk\Desktop\Refactorer\Refactorer\obj\Debug\Refactorer.Properties.Resources.resources
 C:\Users\Faruk\Desktop\Refactorer\Refactorer\obj\Debug\Refactorer.csproj.GenerateResource.Cache
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\bin\Debug\Refactorer.exe.config
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.exe
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.pdb
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\bin\Debug\Refactorer.exe
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\bin\Debug\Refactorer.pdb
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.csprojResolveAssemblyReference.cache
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.frmGraf.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmHalstead.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmMIT.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.frmRefactorer.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmVieww.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.Properties.Resources.resources
+C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.csproj.GenerateResource.Cache

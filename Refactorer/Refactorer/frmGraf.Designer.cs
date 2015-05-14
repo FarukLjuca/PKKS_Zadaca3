@@ -33,6 +33,7 @@
 			// 
 			// pnlGraf
 			// 
+			this.pnlGraf.BackColor = System.Drawing.Color.White;
 			this.pnlGraf.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlGraf.Location = new System.Drawing.Point(0, 0);
 			this.pnlGraf.Name = "pnlGraf";
@@ -45,9 +46,11 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(321, 348);
 			this.Controls.Add(this.pnlGraf);
+			this.KeyPreview = true;
 			this.Name = "frmGraf";
 			this.Text = "Graf";
 			this.Load += new System.EventHandler(this.frmGraf_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGraf_KeyDown);
 			this.ResumeLayout(false);
 
         }

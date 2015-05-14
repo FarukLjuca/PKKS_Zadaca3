@@ -53,6 +53,7 @@
 			this.Controls.Add(this.textBox1);
 			this.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.KeyPreview = true;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FrmVieww";
@@ -61,6 +62,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "FrmVieww";
 			this.Load += new System.EventHandler(this.FrmVieww_Load);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Klick);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

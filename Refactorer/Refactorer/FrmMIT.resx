@@ -118,14 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Modul za računanje Halstead metrike je napisan da podržava nekoliko popularnijih jezika imaju sintaksu kao
-C jezici (C, C++, C#, Java, Objective C).
-Podržane su i ključne riječi najnovijeg C++ standarda koji se naziva C++11 te svi tipovi koje on podržava. 
-Za Halstead operatore se, ipak, ne računaju znakovi kao što su ".", ":" i "," jer njihova svrha veoma često nije 
-da služe kao operatori nego da razdvoje deklaraciju i slično.
-Za listu svih operatora i ugrađenih operanada koje modul za Halstead metriku podržava kliknite na linkove ipod.</value>
+    <value>Metrika informacionog toka (MIT) računa parametre na osnovu jedne funkcije. Broj ulaznih i broj izlaznih parametara se označava sa 'fanin' i 'fanout'.
+Pošto je ovdje podržana sintaksa jezika C++ (tačnije njegove najnovije ISO verzije C++11) koji podržava funkije koje vraćaju samo jednu vrijednost, to znači da parametar 'fanout' može biti ili 1 ili 0. Ovo posljednje ako funkcija vraća void tj. ne vraća ništa.
+Kako MIT izračunava parametre samo jedne funkcije, ovdje će biti prikazano izračunavanje za sve funkcije u proslijeđenom kôdu te će biti prikazani parametri za svaku funkciju ponaosob. Također, u sklopu računanja MIT razvijen je i jednostavni analizer sintakse, pa će biti ponuđena i sintaksna analiza funkcijâ. 
+Elementi funkcija (ime, povratni tip, parametri i njihovi tipovi) će biti prikazani u TreeView kontroli dok će tijelo funkcija biti uklonjeno.
+</value>
   </data>
-  <metadata name="TT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

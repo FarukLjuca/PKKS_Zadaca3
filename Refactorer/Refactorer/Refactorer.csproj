@@ -59,6 +59,12 @@
     <Compile Include="FrmHalstead.designer.cs">
       <DependentUpon>FrmHalstead.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMIT.designer.cs">
+      <DependentUpon>FrmMIT.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVieww.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHalstead.resx">
       <DependentUpon>FrmHalstead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMIT.resx">
+      <DependentUpon>FrmMIT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRefactorer.resx">
       <DependentUpon>frmRefactorer.cs</DependentUpon>

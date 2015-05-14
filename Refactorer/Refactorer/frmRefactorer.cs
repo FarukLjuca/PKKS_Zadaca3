@@ -67,5 +67,10 @@ namespace Refactorer
             FrmHalstead forma = new FrmHalstead(tbxKod.Text);
             forma.ShowDialog(this);
         }
+
+		private void btnInformacioniTok_Click(object sender, EventArgs e)
+		{
+			new FrmMIT (tbxKod.Text).ShowDialog (this);
+		}
     }
 }

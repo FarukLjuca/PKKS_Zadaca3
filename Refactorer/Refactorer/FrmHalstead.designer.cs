@@ -34,17 +34,9 @@
 			this.BtnOperandi = new System.Windows.Forms.Button();
 			this.BtnOperatori = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.B = new System.Windows.Forms.TextBox();
-			this.T = new System.Windows.Forms.TextBox();
-			this.E = new System.Windows.Forms.TextBox();
-			this.L = new System.Windows.Forms.TextBox();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.D = new System.Windows.Forms.TextBox();
-			this.V = new System.Windows.Forms.TextBox();
-			this.N0 = new System.Windows.Forms.TextBox();
-			this.n = new System.Windows.Forms.TextBox();
-			this.fdx = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
+			this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.N20 = new System.Windows.Forms.TextBox();
 			this.df = new System.Windows.Forms.Label();
@@ -54,21 +46,29 @@
 			this.av = new System.Windows.Forms.Label();
 			this.label20 = new System.Windows.Forms.Label();
 			this.label21 = new System.Windows.Forms.Label();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.TT = new System.Windows.Forms.ToolTip(this.components);
-			this.sdgf = new System.Windows.Forms.Label();
-			this.fgb = new System.Windows.Forms.Label();
+			this.panel5 = new System.Windows.Forms.Panel();
 			this.dfg = new System.Windows.Forms.Label();
+			this.fgb = new System.Windows.Forms.Label();
+			this.sdgf = new System.Windows.Forms.Label();
+			this.D = new System.Windows.Forms.TextBox();
+			this.V = new System.Windows.Forms.TextBox();
+			this.N0 = new System.Windows.Forms.TextBox();
+			this.n = new System.Windows.Forms.TextBox();
+			this.fdx = new System.Windows.Forms.Label();
+			this.panel4 = new System.Windows.Forms.Panel();
 			this.ert = new System.Windows.Forms.Label();
 			this.rtft = new System.Windows.Forms.Label();
 			this.dfs = new System.Windows.Forms.Label();
 			this.er = new System.Windows.Forms.Label();
+			this.B = new System.Windows.Forms.TextBox();
+			this.T = new System.Windows.Forms.TextBox();
+			this.E = new System.Windows.Forms.TextBox();
+			this.L = new System.Windows.Forms.TextBox();
+			this.TT = new System.Windows.Forms.ToolTip(this.components);
 			this.panel1.SuspendLayout();
-			this.panel4.SuspendLayout();
-			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
+			this.panel5.SuspendLayout();
+			this.panel4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -115,144 +115,38 @@
 			this.panel1.Size = new System.Drawing.Size(605, 225);
 			this.panel1.TabIndex = 3;
 			// 
-			// panel4
+			// button1
 			// 
-			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel4.Controls.Add(this.ert);
-			this.panel4.Controls.Add(this.rtft);
-			this.panel4.Controls.Add(this.dfs);
-			this.panel4.Controls.Add(this.er);
-			this.panel4.Controls.Add(this.B);
-			this.panel4.Controls.Add(this.T);
-			this.panel4.Controls.Add(this.E);
-			this.panel4.Controls.Add(this.L);
-			this.panel4.Location = new System.Drawing.Point(405, 5);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(196, 165);
-			this.panel4.TabIndex = 13;
+			this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.button1.Location = new System.Drawing.Point(525, 190);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 28);
+			this.button1.TabIndex = 17;
+			this.button1.Text = "Izađi";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// B
+			// linkLabel2
 			// 
-			this.B.BackColor = System.Drawing.Color.White;
-			this.B.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.B.Location = new System.Drawing.Point(55, 125);
-			this.B.Name = "B";
-			this.B.ReadOnly = true;
-			this.B.Size = new System.Drawing.Size(130, 33);
-			this.B.TabIndex = 11;
-			this.B.Text = "12";
-			this.B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.linkLabel2.AutoSize = true;
+			this.linkLabel2.Location = new System.Drawing.Point(5, 205);
+			this.linkLabel2.Name = "linkLabel2";
+			this.linkLabel2.Size = new System.Drawing.Size(304, 14);
+			this.linkLabel2.TabIndex = 16;
+			this.linkLabel2.TabStop = true;
+			this.linkLabel2.Text = "Lista svih OPERATORA sa brojem njihovog pojavljivanja";
+			this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
 			// 
-			// T
+			// linkLabel1
 			// 
-			this.T.BackColor = System.Drawing.Color.White;
-			this.T.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.T.Location = new System.Drawing.Point(55, 85);
-			this.T.Name = "T";
-			this.T.ReadOnly = true;
-			this.T.Size = new System.Drawing.Size(130, 33);
-			this.T.TabIndex = 8;
-			this.T.Text = "12";
-			this.T.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// E
-			// 
-			this.E.BackColor = System.Drawing.Color.White;
-			this.E.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.E.Location = new System.Drawing.Point(55, 45);
-			this.E.Name = "E";
-			this.E.ReadOnly = true;
-			this.E.Size = new System.Drawing.Size(130, 33);
-			this.E.TabIndex = 7;
-			this.E.Text = "12";
-			this.E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// L
-			// 
-			this.L.BackColor = System.Drawing.Color.White;
-			this.L.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.L.Location = new System.Drawing.Point(55, 5);
-			this.L.Name = "L";
-			this.L.ReadOnly = true;
-			this.L.Size = new System.Drawing.Size(130, 33);
-			this.L.TabIndex = 6;
-			this.L.Text = "12";
-			this.L.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// panel5
-			// 
-			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel5.Controls.Add(this.dfg);
-			this.panel5.Controls.Add(this.fgb);
-			this.panel5.Controls.Add(this.sdgf);
-			this.panel5.Controls.Add(this.D);
-			this.panel5.Controls.Add(this.V);
-			this.panel5.Controls.Add(this.N0);
-			this.panel5.Controls.Add(this.n);
-			this.panel5.Controls.Add(this.fdx);
-			this.panel5.Location = new System.Drawing.Point(205, 5);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(196, 165);
-			this.panel5.TabIndex = 14;
-			// 
-			// D
-			// 
-			this.D.BackColor = System.Drawing.Color.White;
-			this.D.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.D.Location = new System.Drawing.Point(55, 125);
-			this.D.Name = "D";
-			this.D.ReadOnly = true;
-			this.D.Size = new System.Drawing.Size(130, 33);
-			this.D.TabIndex = 11;
-			this.D.Text = "12";
-			this.D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// V
-			// 
-			this.V.BackColor = System.Drawing.Color.White;
-			this.V.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.V.Location = new System.Drawing.Point(55, 85);
-			this.V.Name = "V";
-			this.V.ReadOnly = true;
-			this.V.Size = new System.Drawing.Size(130, 33);
-			this.V.TabIndex = 8;
-			this.V.Text = "12";
-			this.V.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// N0
-			// 
-			this.N0.BackColor = System.Drawing.Color.White;
-			this.N0.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.N0.Location = new System.Drawing.Point(55, 45);
-			this.N0.Name = "N0";
-			this.N0.ReadOnly = true;
-			this.N0.Size = new System.Drawing.Size(130, 33);
-			this.N0.TabIndex = 7;
-			this.N0.Text = "12";
-			this.N0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// n
-			// 
-			this.n.BackColor = System.Drawing.Color.White;
-			this.n.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.n.Location = new System.Drawing.Point(55, 5);
-			this.n.Name = "n";
-			this.n.ReadOnly = true;
-			this.n.Size = new System.Drawing.Size(130, 33);
-			this.n.TabIndex = 6;
-			this.n.Text = "12";
-			this.n.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// fdx
-			// 
-			this.fdx.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.fdx.Location = new System.Drawing.Point(5, 10);
-			this.fdx.Name = "fdx";
-			this.fdx.Size = new System.Drawing.Size(38, 25);
-			this.fdx.TabIndex = 0;
-			this.fdx.Text = "n";
-			this.fdx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.TT.SetToolTip(this.fdx, "Dužina vokabulara (n1 + n2) - broj jedinstvenih operatora i operanada");
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Location = new System.Drawing.Point(5, 180);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(304, 14);
+			this.linkLabel1.TabIndex = 15;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "Lista svih OPERANADA sa brojem njihovog pojavljivanja";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// panel6
 			// 
@@ -366,53 +260,32 @@
 			this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.TT.SetToolTip(this.label21, "Broj operatora");
 			// 
-			// linkLabel1
+			// panel5
 			// 
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(5, 180);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(304, 14);
-			this.linkLabel1.TabIndex = 15;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Lista svih OPERANADA sa brojem njihovog pojavljivanja";
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel5.Controls.Add(this.dfg);
+			this.panel5.Controls.Add(this.fgb);
+			this.panel5.Controls.Add(this.sdgf);
+			this.panel5.Controls.Add(this.D);
+			this.panel5.Controls.Add(this.V);
+			this.panel5.Controls.Add(this.N0);
+			this.panel5.Controls.Add(this.n);
+			this.panel5.Controls.Add(this.fdx);
+			this.panel5.Location = new System.Drawing.Point(205, 5);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(196, 165);
+			this.panel5.TabIndex = 14;
 			// 
-			// linkLabel2
+			// dfg
 			// 
-			this.linkLabel2.AutoSize = true;
-			this.linkLabel2.Location = new System.Drawing.Point(5, 205);
-			this.linkLabel2.Name = "linkLabel2";
-			this.linkLabel2.Size = new System.Drawing.Size(304, 14);
-			this.linkLabel2.TabIndex = 16;
-			this.linkLabel2.TabStop = true;
-			this.linkLabel2.Text = "Lista svih OPERATORA sa brojem njihovog pojavljivanja";
-			this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(525, 190);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 28);
-			this.button1.TabIndex = 17;
-			this.button1.Text = "Izađi";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// TT
-			// 
-			this.TT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.TT.ForeColor = System.Drawing.Color.Yellow;
-			// 
-			// sdgf
-			// 
-			this.sdgf.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.sdgf.Location = new System.Drawing.Point(5, 45);
-			this.sdgf.Name = "sdgf";
-			this.sdgf.Size = new System.Drawing.Size(38, 25);
-			this.sdgf.TabIndex = 12;
-			this.sdgf.Text = "N";
-			this.sdgf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.TT.SetToolTip(this.sdgf, "Dužina programa (N1 + N2)");
+			this.dfg.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.dfg.Location = new System.Drawing.Point(5, 130);
+			this.dfg.Name = "dfg";
+			this.dfg.Size = new System.Drawing.Size(38, 25);
+			this.dfg.TabIndex = 14;
+			this.dfg.Text = "D";
+			this.dfg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.TT.SetToolTip(this.dfg, "Nivo poteškoće: D = (n1 / 2.0) * (N2 / 2.0)");
 			// 
 			// fgb
 			// 
@@ -425,16 +298,91 @@
 			this.fgb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.TT.SetToolTip(this.fgb, "Volumen programa: V = N * log2 (n)");
 			// 
-			// dfg
+			// sdgf
 			// 
-			this.dfg.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.dfg.Location = new System.Drawing.Point(5, 130);
-			this.dfg.Name = "dfg";
-			this.dfg.Size = new System.Drawing.Size(38, 25);
-			this.dfg.TabIndex = 14;
-			this.dfg.Text = "D";
-			this.dfg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.TT.SetToolTip(this.dfg, "Nivo poteškoće: D = (n1 / 2.0) * (N2 / 2.0)");
+			this.sdgf.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.sdgf.Location = new System.Drawing.Point(5, 45);
+			this.sdgf.Name = "sdgf";
+			this.sdgf.Size = new System.Drawing.Size(38, 25);
+			this.sdgf.TabIndex = 12;
+			this.sdgf.Text = "N";
+			this.sdgf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.TT.SetToolTip(this.sdgf, "Dužina programa (N1 + N2)");
+			// 
+			// D
+			// 
+			this.D.BackColor = System.Drawing.Color.White;
+			this.D.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.D.Location = new System.Drawing.Point(55, 125);
+			this.D.Name = "D";
+			this.D.ReadOnly = true;
+			this.D.Size = new System.Drawing.Size(130, 33);
+			this.D.TabIndex = 11;
+			this.D.Text = "12";
+			this.D.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// V
+			// 
+			this.V.BackColor = System.Drawing.Color.White;
+			this.V.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.V.Location = new System.Drawing.Point(55, 85);
+			this.V.Name = "V";
+			this.V.ReadOnly = true;
+			this.V.Size = new System.Drawing.Size(130, 33);
+			this.V.TabIndex = 8;
+			this.V.Text = "12";
+			this.V.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// N0
+			// 
+			this.N0.BackColor = System.Drawing.Color.White;
+			this.N0.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.N0.Location = new System.Drawing.Point(55, 45);
+			this.N0.Name = "N0";
+			this.N0.ReadOnly = true;
+			this.N0.Size = new System.Drawing.Size(130, 33);
+			this.N0.TabIndex = 7;
+			this.N0.Text = "12";
+			this.N0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// n
+			// 
+			this.n.BackColor = System.Drawing.Color.White;
+			this.n.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.n.Location = new System.Drawing.Point(55, 5);
+			this.n.Name = "n";
+			this.n.ReadOnly = true;
+			this.n.Size = new System.Drawing.Size(130, 33);
+			this.n.TabIndex = 6;
+			this.n.Text = "12";
+			this.n.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// fdx
+			// 
+			this.fdx.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.fdx.Location = new System.Drawing.Point(5, 10);
+			this.fdx.Name = "fdx";
+			this.fdx.Size = new System.Drawing.Size(38, 25);
+			this.fdx.TabIndex = 0;
+			this.fdx.Text = "n";
+			this.fdx.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.TT.SetToolTip(this.fdx, "Dužina vokabulara (n1 + n2) - broj jedinstvenih operatora i operanada");
+			// 
+			// panel4
+			// 
+			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel4.Controls.Add(this.ert);
+			this.panel4.Controls.Add(this.rtft);
+			this.panel4.Controls.Add(this.dfs);
+			this.panel4.Controls.Add(this.er);
+			this.panel4.Controls.Add(this.B);
+			this.panel4.Controls.Add(this.T);
+			this.panel4.Controls.Add(this.E);
+			this.panel4.Controls.Add(this.L);
+			this.panel4.Location = new System.Drawing.Point(405, 5);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(196, 165);
+			this.panel4.TabIndex = 13;
 			// 
 			// ert
 			// 
@@ -480,11 +428,65 @@
 			this.er.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.TT.SetToolTip(this.er, "Nivo programa: L = 1 / D");
 			// 
+			// B
+			// 
+			this.B.BackColor = System.Drawing.Color.White;
+			this.B.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.B.Location = new System.Drawing.Point(55, 125);
+			this.B.Name = "B";
+			this.B.ReadOnly = true;
+			this.B.Size = new System.Drawing.Size(130, 33);
+			this.B.TabIndex = 11;
+			this.B.Text = "12";
+			this.B.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// T
+			// 
+			this.T.BackColor = System.Drawing.Color.White;
+			this.T.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.T.Location = new System.Drawing.Point(55, 85);
+			this.T.Name = "T";
+			this.T.ReadOnly = true;
+			this.T.Size = new System.Drawing.Size(130, 33);
+			this.T.TabIndex = 8;
+			this.T.Text = "12";
+			this.T.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// E
+			// 
+			this.E.BackColor = System.Drawing.Color.White;
+			this.E.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.E.Location = new System.Drawing.Point(55, 45);
+			this.E.Name = "E";
+			this.E.ReadOnly = true;
+			this.E.Size = new System.Drawing.Size(130, 33);
+			this.E.TabIndex = 7;
+			this.E.Text = "12";
+			this.E.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// L
+			// 
+			this.L.BackColor = System.Drawing.Color.White;
+			this.L.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.L.Location = new System.Drawing.Point(55, 5);
+			this.L.Name = "L";
+			this.L.ReadOnly = true;
+			this.L.Size = new System.Drawing.Size(130, 33);
+			this.L.TabIndex = 6;
+			this.L.Text = "12";
+			this.L.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// TT
+			// 
+			this.TT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.TT.ForeColor = System.Drawing.Color.Yellow;
+			// 
 			// FrmHalstead
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
+			this.CancelButton = this.button1;
 			this.ClientSize = new System.Drawing.Size(614, 354);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.BtnOperatori);
@@ -500,12 +502,12 @@
 			this.Load += new System.EventHandler(this.FrmHalstead_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			this.panel5.ResumeLayout(false);
-			this.panel5.PerformLayout();
 			this.panel6.ResumeLayout(false);
 			this.panel6.PerformLayout();
+			this.panel5.ResumeLayout(false);
+			this.panel5.PerformLayout();
+			this.panel4.ResumeLayout(false);
+			this.panel4.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

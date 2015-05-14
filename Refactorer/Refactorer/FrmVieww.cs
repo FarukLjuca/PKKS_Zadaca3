@@ -34,5 +34,14 @@ namespace Refactorer
 		{
 
 		}
+
+		private void Klick(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Escape)
+			{
+				e.Handled = true;
+				this.Close ();
+			}
+		}
 	}
 }

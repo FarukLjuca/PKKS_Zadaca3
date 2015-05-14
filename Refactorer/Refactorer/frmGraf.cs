@@ -235,5 +235,14 @@ namespace Refactorer
                 //g.DrawEllipse(olovka, 50, 50, 50, 50);
             }
         }
+
+		private void frmGraf_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Escape)
+			{
+				e.Handled = true;
+				this.Close ();
+			}
+		}
     }
 }
