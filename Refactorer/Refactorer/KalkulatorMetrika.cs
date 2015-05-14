@@ -23,7 +23,7 @@ namespace Refactorer
             // Budući da je u zadatku naglašeno da se ispituje metrika jedne funkcije, njen broj neovisnih dijelova je uvijek 1
             rezultat.BrojNeovisnihDjelova = 1;
 
-            rezultat.Kompleksnost = DajBrojUslovnihGrananjaBezElse() + DajBrojPetlji();
+            rezultat.Kompleksnost = DajBrojUslovnihGrananjaBezElse() + DajBrojPetlji() + 1;
 
             return rezultat;
         }
@@ -61,7 +61,7 @@ namespace Refactorer
 
         public List<String> DajGraf()
         {
-            #region Prosli kod
+            #region Stari kod
             /*
             List<String> graf = new List<string>();
 
@@ -125,8 +125,116 @@ namespace Refactorer
             # endregion
 
             List<String> komande = new List<String>();
+            List<int> indeksi = new List<int>();
 
+            Regex patern = new Regex(@"\b(if|else|case)\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                komande.Add("grananje");
+                indeksi.Add(pogodak.Index);
+            }
 
+            patern = new Regex(@"\bswitch\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                komande.Add("switch");
+                indeksi.Add(pogodak.Index);
+            }
+
+            patern = new Regex(@"\b(for|while|foreach)\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                komande.Add("petlja");
+                indeksi.Add(pogodak.Index);
+            }
+
+            patern = new Regex(@"\bdo\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                bool preskoci = false;
+
+                foreach (int postojeciIndex in indeksi)
+                    if (postojeciIndex == pogodak.Index)
+                    {
+                        preskoci = true;
+                        break;
+                    }
+
+                if (true == preskoci)
+                    continue;
+
+                komande.Add("dowhile");
+                indeksi.Add(pogodak.Index);
+            }
+
+            patern = new Regex(@"}");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                komande.Add("kraj");
+                indeksi.Add(pogodak.Index);
+            }
+
+            bool biloPromjene = true;
+
+            while (true == biloPromjene)
+            {
+                biloPromjene = false;
+
+                for (int i = 0; i < komande.Count - 1; i++)
+                    if (indeksi[i] > indeksi[i + 1])
+                    {
+                        int temp = indeksi[i];
+                        indeksi[i] = indeksi[i + 1];
+                        indeksi[i + 1] = temp;
+
+                        string tempString = komande[i];
+                        komande[i] = komande[i + 1];
+                        komande[i + 1] = tempString;
+
+                        biloPromjene = true;
+                    }
+            }
+
+            int prvaPetlja = -1;
+            int drugaPetlja = -1;
+            for (int i = 0; i < komande.Count; i++)
+            {
+                if (komande[i] == "petlja")
+                {
+                    if (prvaPetlja == -1)
+                        prvaPetlja++;
+                    else if (drugaPetlja == -1)
+                        drugaPetlja++;
+                    else
+                        System.Windows.Forms.MessageBox.Show("Kod koji ste unjeli ima trostruko ugnježdenu petlju");
+                }
+                else if (komande[i] == "grananje" || komande[i] == "switch")
+                {
+                    if (prvaPetlja >= 0)
+                        prvaPetlja++;
+                    else if (drugaPetlja >= 0)
+                        drugaPetlja++;
+                }
+                else if (komande[i] == "kraj")
+                {
+                    if (prvaPetlja == 0)
+                        komande[i] = "krajPetlje";
+                    else if (drugaPetlja == 0)
+                        komande[i] = "krajPetlje";
+                    else if (drugaPetlja > 0)
+                        drugaPetlja--;
+                    else if (prvaPetlja > 0)
+                        prvaPetlja--;
+                }
+            }
+
+            String str = "";
+            foreach (string  s  in komande)
+            {
+                str += s + "\n";
+            }
+
+            System.Windows.Forms.MessageBox.Show(str);
 
             return komande;
         }

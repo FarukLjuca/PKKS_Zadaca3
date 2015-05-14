@@ -12,12 +12,12 @@ namespace Refactorer
 {
     public partial class frmGraf : Form
     {
-        private List<String> graf;
+        private List<String> komande;
 
-        public frmGraf(List<String> graf)
+        public frmGraf(List<String> komande)
         {
             InitializeComponent();
-            this.graf = graf;
+            this.komande = komande;
         }
 
         private void frmGraf_Load(object sender, EventArgs e)
@@ -41,6 +41,8 @@ namespace Refactorer
 
         private void Crtaj(object sender, PaintEventArgs e)
         {
+            #region Stari kod
+            /*
             Graphics g = e.Graphics;
             int sredina = e.ClipRectangle.Width / 2;
             bool prviIf = true;
@@ -234,6 +236,120 @@ namespace Refactorer
                 //g.DrawLine(olovka, 0, 0, 100, 100);
                 //g.DrawEllipse(olovka, 50, 50, 50, 50);
             }
+             * */
+        # endregion
+
+            Graphics g = e.Graphics;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            int sredina = e.ClipRectangle.Width / 2;
+            int visina = 10;
+            Pen olovka = new Pen(Color.Black, 3);
+
+            int brojacGrananja = 0, visinaPetlje1 = 0, visinaPetlje2 = 0;
+            bool prvaKomanda = true;
+            bool samIf = false;
+
+            foreach (string komanda in komande)
+            {
+                if (komanda == "grananje")
+                {
+                    if (brojacGrananja == 0)
+                    {
+                        if (true == samIf)
+                        {
+                            g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
+                            g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 15);
+                            g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
+                            samIf = false;
+                        }
+                        samIf = true;
+
+                        visina += 120;
+
+                        if (false == prvaKomanda)
+                        {
+                            g.DrawLine(olovka, sredina, visina - 120, sredina, visina - 100);
+                            g.DrawLine(olovka, sredina, visina - 100, sredina + 5, visina - 105);
+                            g.DrawLine(olovka, sredina, visina - 100, sredina - 5, visina - 105);
+                        }
+                        prvaKomanda = false;
+
+                        g.DrawEllipse(olovka, sredina - 10, visina - 100, 20, 20);
+                        g.DrawLine(olovka, sredina, visina - 80, sredina, visina - 60);
+                        g.DrawLine(olovka, sredina, visina - 60, sredina + 5, visina - 65);
+                        g.DrawLine(olovka, sredina, visina - 60, sredina - 5, visina - 65);
+
+                        g.DrawEllipse(olovka, sredina - 10, visina - 60, 20, 20);
+                        g.DrawLine(olovka, sredina, visina - 40, sredina, visina - 20);
+                        g.DrawLine(olovka, sredina, visina - 20, sredina + 5, visina - 25);
+                        g.DrawLine(olovka, sredina, visina - 20, sredina - 5, visina - 25);
+
+                        g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
+                    }
+                }
+                else if (komanda == "petlja")
+                {
+                    if (true == samIf)
+                    {
+                        g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
+                        g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 15);
+                        g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
+                        samIf = false;
+                    }
+
+                    visina += 40;
+
+                    if (false == prvaKomanda)
+                    {
+                        g.DrawLine(olovka, sredina, visina - 40, sredina, visina - 20);
+                        g.DrawLine(olovka, sredina, visina - 20, sredina + 5, visina - 25);
+                        g.DrawLine(olovka, sredina, visina - 20, sredina - 5, visina - 25);
+                    }
+                    prvaKomanda = false;
+
+                    g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
+
+                    if (visinaPetlje1 == 0)
+                        visinaPetlje1 = visina - 10;
+                    else if (visinaPetlje2 == 0)
+                        visinaPetlje2 = visina - 10;
+                }
+                else if (komanda == "krajPetlje")
+                {
+                    if (true == samIf)
+                    {
+                        g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
+                        g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 15);
+                        g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
+                        samIf = false;
+                    }
+
+                    visina += 80;
+
+                    g.DrawLine(olovka, sredina, visina - 80, sredina, visina - 60);
+                    g.DrawLine(olovka, sredina, visina - 60, sredina + 5, visina - 65);
+                    g.DrawLine(olovka, sredina, visina - 60, sredina - 5, visina - 65);
+
+                    g.DrawEllipse(olovka, sredina - 10, visina - 60, 20, 20);
+                    g.DrawArc(olovka, sredina - 40, visinaPetlje1 , 100, visina - visinaPetlje1 - 50, -90, 180);
+                    g.DrawLine(olovka, sredina + 10, visinaPetlje1, sredina + 15, visinaPetlje1 - 5);
+                    g.DrawLine(olovka, sredina + 10, visinaPetlje1, sredina + 15, visinaPetlje1 + 5);
+
+                    g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
+                    g.DrawArc(olovka, sredina - 70, visinaPetlje1, 120, visina - visinaPetlje1 - 10, 90, 180);
+                    g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
+                    g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 15);
+                }
+            }
+
+            if (true == samIf)
+            {
+                g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
+                g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 15);
+                g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
+            }
+
+            base.OnPaint(e);
         }
 
 		private void frmGraf_KeyDown(object sender, KeyEventArgs e)
