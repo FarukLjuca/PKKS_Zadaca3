@@ -286,9 +286,69 @@ namespace Refactorer
 
                         g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
                     }
+                    else if (brojacGrananja == 1)
+                    {
+                        samIf = false;
+
+                        g.DrawEllipse(olovka, sredina - 40, visina - 60, 20, 20);
+
+                        g.DrawLine(olovka, sredina, visina - 20, sredina - 25, visina - 40);
+                        //g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 25, visina + 33);
+                        //g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 18, visina + 40);
+
+                        //g.DrawLine(olovka, sredina - 25, visina - 20, sredina, visina - 45);
+                        //g.DrawLine(olovka, sredina, visina - 20, sredina, visina - 25);
+                        //g.DrawLine(olovka, sredina, visina - 20, sredina, visina - 15);
+                        
+                    }
+                    else if (brojacGrananja == 2)
+                    {
+                        samIf = false;
+
+                        g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
+
+                        g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
+                        g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 45, visina + 33);
+                        g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 38, visina + 40);
+
+                        g.DrawLine(olovka, sredina + 45, visina + 20, sredina + 20, visina + 45);
+                        g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 20, visina + 38);
+                        g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 27, visina + 45);
+                        
+                    }
+                    else if (brojacGrananja == 3)
+                    {
+                        samIf = false;
+
+                        g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
+
+                        g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
+                        g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 62, visina + 33);
+                        g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 56, visina + 42);
+
+                        g.DrawLine(olovka, sredina - 65, visina + 20, sredina, visina + 50);
+                        g.DrawLine(olovka, sredina, visina + 50, sredina - 7, visina + 53);
+                    }
+                    else if (brojacGrananja == 4)
+                    {
+                        samIf = false;
+
+                        g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
+
+                        g.DrawLine(olovka, sredina + 20, visina + 10, sredina + 85, visina + 40);
+                        g.DrawLine(olovka, sredina + 85, visina + 40, sredina + 83, visina + 33);
+                        g.DrawLine(olovka, sredina + 85, visina + 40, sredina + 76, visina + 42);
+
+                        g.DrawLine(olovka, sredina + 85, visina + 20, sredina + 20, visina + 50);
+                        g.DrawLine(olovka, sredina + 20, visina + 50, sredina + 27, visina + 53);
+                    }
+
+                    brojacGrananja++;
                 }
                 else if (komanda == "petlja")
                 {
+                    brojacGrananja = 0;
+
                     if (true == samIf)
                     {
                         g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
@@ -316,6 +376,8 @@ namespace Refactorer
                 }
                 else if (komanda == "krajPetlje")
                 {
+                    brojacGrananja = 0;
+
                     if (true == samIf)
                     {
                         g.DrawArc(olovka, sredina - 35, visina - 90, 50, 80, 90, 180);
