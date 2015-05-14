@@ -40,10 +40,29 @@ namespace Refactorer
                 Pen olovka = new Pen(Color.Black, 3);
 
                 int brojElsa = 0;
+                bool provjeriSljedeci = false;
 
-                foreach (String komanda in graf)
+                for (int i = 0; i < graf.Count; i++ )
                 {
-                    if (komanda == "if") {
+                    if (provjeriSljedeci == true)
+                    {
+                        if (graf[i] == "end")
+                        {
+                            continue;
+                        }
+                        else if (graf[i] != "else" && graf[i] != "elseif")
+                        {
+                            g.DrawArc(olovka, sredina - 25, visina + 10, 50, 80, 90, 180);
+                            g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 95);
+                            g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 83);
+                        }
+                    }
+                    provjeriSljedeci = false;
+
+                    if (graf[i] == "if")
+                    {
+                        provjeriSljedeci = true;
+                        brojElsa = 0;
 
                         if (prviIf != true)
                         {
@@ -56,7 +75,7 @@ namespace Refactorer
                         prviIf = false;
 
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
-                        g.DrawLine(olovka, sredina+10, visina + 20, sredina+10, visina + 40);
+                        g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
                         visina += 40;
@@ -70,8 +89,10 @@ namespace Refactorer
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         visina -= 80;
                     }
-                    else if (komanda == "elseif" || komanda == "else")
+                    else if (graf[i] == "elseif" || graf[i] == "else")
                     {
+                        provjeriSljedeci = false;
+
                         if (brojElsa == 0)
                         {
                             g.DrawEllipse(olovka, sredina - 40, visina + 40, 20, 20);
@@ -142,7 +163,13 @@ namespace Refactorer
                             this.Close();
                         }
                     }
-                    if (komanda == "else")
+                    if (graf[graf.Count - 1] == "if" && i == graf.Count - 1)
+                    {
+                        g.DrawArc(olovka, sredina - 25, visina + 10, 50, 80, 90, 180);
+                        g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 95);
+                        g.DrawLine(olovka, sredina, visina + 90, sredina - 5, visina + 83);
+                    }
+                    if (graf[i] == "else")
                     {
                         brojElsa = 0;
                     }
