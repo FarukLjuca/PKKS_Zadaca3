@@ -42,9 +42,16 @@ namespace Refactorer
             //forma.Show();
 
             List<string> komande = kalkulator.DajGraf();
+			//moram dodati ovo :D
+			if (komande.Count == 0)
+			{
+				MessageBox.Show (this, "Niste unijeli kôd. Unesite podržan kôd prvo da biste mogli nacrtati graf.", "Nema kôda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
 
             frmGraf forma = new frmGraf(komande);
-            forma.Show();
+			forma.StartPosition = FormStartPosition.CenterParent; 
+            forma.ShowDialog(this); //neka bude Dialog :3
 
              /*
             foreach (string s in tekst)
@@ -57,7 +64,7 @@ namespace Refactorer
         private void btnHalstead_Click(object sender, EventArgs e)
         {
             FrmHalstead forma = new FrmHalstead(tbxKod.Text);
-            forma.Show();
+            forma.ShowDialog(this);
         }
     }
 }

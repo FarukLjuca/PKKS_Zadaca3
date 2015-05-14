@@ -71,8 +71,12 @@
       <DependentUpon>frmRefactorer.cs</DependentUpon>
     </Compile>
     <Compile Include="McCabeRezultat.cs" />
+    <Compile Include="MIT.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmGraf.resx">
       <DependentUpon>frmGraf.cs</DependentUpon>
     </EmbeddedResource>
