@@ -127,11 +127,33 @@ namespace Refactorer
             List<String> komande = new List<String>();
             List<int> indeksi = new List<int>();
 
-            Regex patern = new Regex(@"\b(if|else|case)\b");
+            Regex patern = new Regex(@"\b(else|case)\b");
             foreach (Match pogodak in patern.Matches(Kod))
             {
                 komande.Add("grananje");
                 indeksi.Add(pogodak.Index);
+            }
+
+            patern = new Regex(@"\bif\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                bool postojiIndex = false;
+
+                Regex paternDrugi = new Regex(@"\belse if\b");
+                foreach (Match pogodakDrugi in paternDrugi.Matches(Kod))
+                {
+                    if (pogodak.Index == pogodakDrugi.Index)
+                    {
+                        postojiIndex = true;
+                        break;
+                    }
+                }
+
+                if (false == postojiIndex)
+                {
+                    komande.Add("grananje");
+                    indeksi.Add(pogodak.Index);
+                }
             }
 
             patern = new Regex(@"\bswitch\b");

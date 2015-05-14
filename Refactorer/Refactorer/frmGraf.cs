@@ -292,42 +292,38 @@ namespace Refactorer
 
                         g.DrawEllipse(olovka, sredina - 40, visina - 60, 20, 20);
 
-                        g.DrawLine(olovka, sredina, visina - 20, sredina - 25, visina - 40);
-                        //g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 25, visina + 33);
-                        //g.DrawLine(olovka, sredina - 25, visina + 40, sredina - 18, visina + 40);
+                        g.DrawLine(olovka, sredina - 5, visina - 80, sredina - 25, visina - 60);
+                        g.DrawLine(olovka, sredina - 25, visina - 60, sredina - 25, visina - 67);
+                        g.DrawLine(olovka, sredina - 25, visina - 60, sredina - 18, visina - 60);
 
-                        //g.DrawLine(olovka, sredina - 25, visina - 20, sredina, visina - 45);
-                        //g.DrawLine(olovka, sredina, visina - 20, sredina, visina - 25);
-                        //g.DrawLine(olovka, sredina, visina - 20, sredina, visina - 15);
-                        
+                        g.DrawLine(olovka, sredina - 25, visina - 40, sredina - 5, visina - 20);
+                        g.DrawLine(olovka, sredina - 15, visina - 20, sredina - 5, visina - 18);
                     }
                     else if (brojacGrananja == 2)
                     {
                         samIf = false;
 
-                        g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
+                        g.DrawEllipse(olovka, sredina + 20, visina - 60, 20, 20);
 
-                        g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
-                        g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 45, visina + 33);
-                        g.DrawLine(olovka, sredina + 45, visina + 40, sredina + 38, visina + 40);
+                        g.DrawLine(olovka, sredina + 5, visina - 80, sredina + 25, visina - 60);
+                        g.DrawLine(olovka, sredina + 25, visina - 60, sredina + 25, visina - 67);
+                        g.DrawLine(olovka, sredina + 25, visina - 60, sredina + 18, visina - 60);
 
-                        g.DrawLine(olovka, sredina + 45, visina + 20, sredina + 20, visina + 45);
-                        g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 20, visina + 38);
-                        g.DrawLine(olovka, sredina + 20, visina + 45, sredina + 27, visina + 45);
-                        
+                        g.DrawLine(olovka, sredina + 25, visina - 40, sredina + 5, visina - 20);
+                        g.DrawLine(olovka, sredina + 15, visina - 20, sredina + 5, visina - 18);
                     }
                     else if (brojacGrananja == 3)
                     {
                         samIf = false;
 
-                        g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
+                        g.DrawEllipse(olovka, sredina - 70, visina - 60, 20, 20);
 
-                        g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
-                        g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 62, visina + 33);
-                        g.DrawLine(olovka, sredina - 65, visina + 40, sredina - 56, visina + 42);
+                        g.DrawLine(olovka, sredina - 5, visina - 80, sredina - 25, visina - 60);
+                        g.DrawLine(olovka, sredina - 55, visina - 60, sredina - 25, visina - 67);
+                        g.DrawLine(olovka, sredina - 55, visina - 60, sredina - 18, visina - 60);
 
-                        g.DrawLine(olovka, sredina - 65, visina + 20, sredina, visina + 50);
-                        g.DrawLine(olovka, sredina, visina + 50, sredina - 7, visina + 53);
+                        g.DrawLine(olovka, sredina - 55, visina - 40, sredina - 5, visina - 20);
+                        g.DrawLine(olovka, sredina - 45, visina - 20, sredina - 5, visina - 18);
                     }
                     else if (brojacGrananja == 4)
                     {

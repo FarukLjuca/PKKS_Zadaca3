@@ -61,3 +61,4 @@ C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refa
 C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.csproj.GenerateResource.Cache
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmMIT.resources
 C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmRefact.resources
+C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmRefact.resources
