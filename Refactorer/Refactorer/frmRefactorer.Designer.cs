@@ -35,9 +35,9 @@
 			this.btnHalstead = new System.Windows.Forms.Button();
 			this.btnInformacioniTok = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.BtnRefact = new System.Windows.Forms.Button();
 			this.btnGraf = new System.Windows.Forms.Button();
 			this.llbPravila = new System.Windows.Forms.LinkLabel();
-			this.BtnRefact = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -64,8 +64,10 @@
 			this.tbxKod.Location = new System.Drawing.Point(6, 19);
 			this.tbxKod.Multiline = true;
 			this.tbxKod.Name = "tbxKod";
+			this.tbxKod.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.tbxKod.Size = new System.Drawing.Size(396, 312);
 			this.tbxKod.TabIndex = 2;
+			this.tbxKod.Text = resources.GetString("tbxKod.Text");
 			// 
 			// btnMcCabe
 			// 
@@ -117,6 +119,16 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Odaberite akciju:";
 			// 
+			// BtnRefact
+			// 
+			this.BtnRefact.Location = new System.Drawing.Point(5, 160);
+			this.BtnRefact.Name = "BtnRefact";
+			this.BtnRefact.Size = new System.Drawing.Size(199, 23);
+			this.BtnRefact.TabIndex = 6;
+			this.BtnRefact.Text = "Refactoring kôda";
+			this.BtnRefact.UseVisualStyleBackColor = true;
+			this.BtnRefact.Click += new System.EventHandler(this.BtnRefact_Click);
+			// 
 			// btnGraf
 			// 
 			this.btnGraf.Location = new System.Drawing.Point(6, 132);
@@ -139,16 +151,6 @@
 			this.llbPravila.Text = "Pravila programskog modula";
 			this.llbPravila.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbPravila_LinkClicked);
 			// 
-			// BtnRefact
-			// 
-			this.BtnRefact.Location = new System.Drawing.Point(5, 160);
-			this.BtnRefact.Name = "BtnRefact";
-			this.BtnRefact.Size = new System.Drawing.Size(199, 23);
-			this.BtnRefact.TabIndex = 6;
-			this.BtnRefact.Text = "Refactoring kôda";
-			this.BtnRefact.UseVisualStyleBackColor = true;
-			this.BtnRefact.Click += new System.EventHandler(this.BtnRefact_Click);
-			// 
 			// frmRefactorer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +163,7 @@
 			this.Name = "frmRefactorer";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Refactorer";
+			this.Load += new System.EventHandler(this.frmRefactorer_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);

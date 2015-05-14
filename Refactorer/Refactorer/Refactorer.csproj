@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAbout.cs" />
+    <Compile Include="FrmAbout.designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGraf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +96,9 @@
     <Compile Include="SpecPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGraf.resx">
       <DependentUpon>frmGraf.cs</DependentUpon>
     </EmbeddedResource>

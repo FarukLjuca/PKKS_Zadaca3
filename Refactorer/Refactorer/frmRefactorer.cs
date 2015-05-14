@@ -77,5 +77,10 @@ namespace Refactorer
 		{
 			new FrmRefact (tbxKod.Text).ShowDialog (this);
 		}
+
+		private void frmRefactorer_Load(object sender, EventArgs e)
+		{
+			new FrmAbout ().ShowDialog (this);
+		}
     }
 }
