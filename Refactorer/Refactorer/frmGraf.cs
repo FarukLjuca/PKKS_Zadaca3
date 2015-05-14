@@ -14,12 +14,6 @@ namespace Refactorer
     {
         private List<String> graf;
 
-        // Kako bi se znao na kojem nivou crtanja je graf
-        private int visina = 10;
-        private bool prviIf = true;
-
-        // Sredina crteza, izvucena u varijablu kako bi se lakse mogla mijenjati ako bi se zahtjevao sir crtez
-        private int sredina = 130;
         public frmGraf(List<String> graf)
         {
             InitializeComponent();
@@ -30,18 +24,34 @@ namespace Refactorer
         {
             pnlGraf.Paint += new PaintEventHandler(Crtaj);
         }
+        /// <summary>
+        /// Čisto da vidimo da li je bolje kad se popuni :D
+        /// </summary>
+        bool popuni = true;
+
+        private void Popuni(Graphics g, int x, int y, int w = 20, int h = 20)
+        {
+            if (!popuni) return;
+            Brush boja = new System.Drawing.Drawing2D.LinearGradientBrush(
+                new Rectangle(x, y, w, h),
+                Color.Orange, Color.White,
+                System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal);
+            g.FillEllipse(boja, x, y, w, h);
+        }
 
         private void Crtaj(object sender, PaintEventArgs e)
         {
-            base.OnPaint(e);
-            using (Graphics g = e.Graphics)
+            Graphics g = e.Graphics;
+            int sredina = e.ClipRectangle.Width / 2;
+            bool prviIf = true;
+            int visina = 20;
             {
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 Pen olovka = new Pen(Color.Black, 3);
 
+                
                 int brojElsa = 0;
                 bool provjeriSljedeci = false;
-
                 for (int i = 0; i < graf.Count; i++ )
                 {
                     if (provjeriSljedeci == true)
@@ -74,18 +84,20 @@ namespace Refactorer
                         }
                         prviIf = false;
 
+                        Popuni(g, sredina, visina);
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
                         visina += 40;
 
+                        Popuni(g, sredina, visina);
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         g.DrawLine(olovka, sredina + 10, visina + 20, sredina + 10, visina + 40);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 5, visina + 35);
                         g.DrawLine(olovka, sredina + 10, visina + 40, sredina + 15, visina + 35);
                         visina += 40;
-
+                        Popuni(g, sredina, visina);
                         g.DrawEllipse(olovka, sredina, visina, 20, 20);
                         visina -= 80;
                     }
@@ -95,6 +107,7 @@ namespace Refactorer
 
                         if (brojElsa == 0)
                         {
+                            Popuni(g, sredina - 40, visina + 40);
                             g.DrawEllipse(olovka, sredina - 40, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina, visina + 15, sredina - 25, visina + 40);
@@ -111,6 +124,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 1)
                         {
+                            Popuni(g, sredina + 40, visina + 40);
                             g.DrawEllipse(olovka, sredina + 40, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina + 20, visina + 15, sredina + 45, visina + 40);
@@ -127,6 +141,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 2)
                         {
+                            Popuni(g, sredina - 80, visina + 40);
                             g.DrawEllipse(olovka, sredina - 80, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina, visina + 10, sredina - 65, visina + 40);
@@ -143,6 +158,7 @@ namespace Refactorer
                         }
                         else if (brojElsa == 3)
                         {
+                            Popuni(g, sredina + 80, visina + 40);
                             g.DrawEllipse(olovka, sredina + 80, visina + 40, 20, 20);
 
                             g.DrawLine(olovka, sredina + 20, visina + 10, sredina + 85, visina + 40);
@@ -173,8 +189,9 @@ namespace Refactorer
                     {
                         brojElsa = 0;
                     }
+                
                 }
-
+                base.OnPaint(e);
                 //g.DrawLine(olovka, 0, 0, 100, 100);
                 //g.DrawEllipse(olovka, 50, 50, 50, 50);
             }
