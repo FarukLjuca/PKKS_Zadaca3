@@ -63,3 +63,4 @@ C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Ref
 C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmRefact.resources
 C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmRefact.resources
 C:\Users\Enil\Documents\GitHub\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmAbout.resources
+C:\Users\Faruk\Documents\Visual Studio 2013\Projects\PKKS_Zadaca3\Refactorer\Refactorer\obj\Debug\Refactorer.FrmAbout.resources

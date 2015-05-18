@@ -142,7 +142,7 @@ namespace Refactorer
                 Regex paternDrugi = new Regex(@"\belse if\b");
                 foreach (Match pogodakDrugi in paternDrugi.Matches(Kod))
                 {
-                    if (pogodak.Index == pogodakDrugi.Index)
+                    if (pogodak.Index == pogodakDrugi.Index + 5)
                     {
                         postojiIndex = true;
                         break;
@@ -233,7 +233,10 @@ namespace Refactorer
                 else if (komande[i] == "grananje" || komande[i] == "switch")
                 {
                     if (prvaPetlja >= 0)
+                    {
                         prvaPetlja++;
+                        drugaPetlja++;
+                    }
                     else if (drugaPetlja >= 0)
                         drugaPetlja++;
                 }
