@@ -126,140 +126,178 @@ namespace Refactorer
 
             List<String> komande = new List<String>();
             List<int> indeksi = new List<int>();
-
-            Regex patern = new Regex(@"\b(else|case)\b");
-            foreach (Match pogodak in patern.Matches(Kod))
+            var mit = new MIT(Kod);
+            var l = mit.ListaFunkcija;
+            foreach (MIT.Funkcija f in l)
             {
-                komande.Add("grananje");
-                indeksi.Add(pogodak.Index);
-            }
-
-            patern = new Regex(@"\bif\b");
-            foreach (Match pogodak in patern.Matches(Kod))
-            {
-                bool postojiIndex = false;
-
-                Regex paternDrugi = new Regex(@"\belse if\b");
-                foreach (Match pogodakDrugi in paternDrugi.Matches(Kod))
-                {
-                    if (pogodak.Index == pogodakDrugi.Index + 5)
-                    {
-                        postojiIndex = true;
-                        break;
-                    }
-                }
-
-                if (false == postojiIndex)
+                System.Windows.Forms.MessageBox.Show(f.Tijelo);
+                Kod = f.Tijelo;
+                Regex patern = new Regex(@"\b(else|case)\b");
+                foreach (Match pogodak in patern.Matches(Kod))
                 {
                     komande.Add("grananje");
                     indeksi.Add(pogodak.Index);
                 }
-            }
 
-            patern = new Regex(@"\bswitch\b");
-            foreach (Match pogodak in patern.Matches(Kod))
-            {
-                komande.Add("switch");
-                indeksi.Add(pogodak.Index);
-            }
+                patern = new Regex(@"\bif\b");
+                foreach (Match pogodak in patern.Matches(Kod))
+                {
+                    bool postojiIndex = false;
 
-            patern = new Regex(@"\b(for|while|foreach)\b");
-            foreach (Match pogodak in patern.Matches(Kod))
-            {
-                komande.Add("petlja");
-                indeksi.Add(pogodak.Index);
-            }
-
-            patern = new Regex(@"\bdo\b");
-            foreach (Match pogodak in patern.Matches(Kod))
-            {
-                bool preskoci = false;
-
-                foreach (int postojeciIndex in indeksi)
-                    if (postojeciIndex == pogodak.Index)
+                    Regex paternDrugi = new Regex(@"\belse if\b");
+                    foreach (Match pogodakDrugi in paternDrugi.Matches(Kod))
                     {
-                        preskoci = true;
-                        break;
+                        if (pogodak.Index == pogodakDrugi.Index + 5)
+                        {
+                            postojiIndex = true;
+                            break;
+                        }
                     }
 
-                if (true == preskoci)
-                    continue;
-
-                komande.Add("dowhile");
-                indeksi.Add(pogodak.Index);
-            }
-
-            patern = new Regex(@"}");
-            foreach (Match pogodak in patern.Matches(Kod))
-            {
-                komande.Add("kraj");
-                indeksi.Add(pogodak.Index);
-            }
-
-            bool biloPromjene = true;
-
-            while (true == biloPromjene)
-            {
-                biloPromjene = false;
-
-                for (int i = 0; i < komande.Count - 1; i++)
-                    if (indeksi[i] > indeksi[i + 1])
+                    if (false == postojiIndex)
                     {
-                        int temp = indeksi[i];
-                        indeksi[i] = indeksi[i + 1];
-                        indeksi[i + 1] = temp;
-
-                        string tempString = komande[i];
-                        komande[i] = komande[i + 1];
-                        komande[i + 1] = tempString;
-
-                        biloPromjene = true;
+                        komande.Add("grananje");
+                        indeksi.Add(pogodak.Index);
                     }
-            }
-
-            int prvaPetlja = -1;
-            int drugaPetlja = -1;
-            for (int i = 0; i < komande.Count; i++)
-            {
-                if (komande[i] == "petlja")
-                {
-                    if (prvaPetlja == -1)
-                        prvaPetlja++;
-                    else if (drugaPetlja == -1)
-                        drugaPetlja++;
-                    else
-                        System.Windows.Forms.MessageBox.Show("Kod koji ste unjeli ima trostruko ugnježdenu petlju");
                 }
-                else if (komande[i] == "grananje" || komande[i] == "switch")
+
+                patern = new Regex(@"\bswitch\b");
+                foreach (Match pogodak in patern.Matches(Kod))
                 {
-                    if (prvaPetlja >= 0)
+                    komande.Add("switch");
+                    indeksi.Add(pogodak.Index);
+                }
+
+                patern = new Regex(@"\b(for|while|foreach)\b");
+                foreach (Match pogodak in patern.Matches(Kod))
+                {
+                    komande.Add("petlja");
+                    indeksi.Add(pogodak.Index);
+                }
+
+                patern = new Regex(@"\bdo\b");
+                foreach (Match pogodak in patern.Matches(Kod))
+                {
+                    bool preskoci = false;
+
+                    foreach (int postojeciIndex in indeksi)
+                        if (postojeciIndex == pogodak.Index)
+                        {
+                            preskoci = true;
+                            break;
+                        }
+
+                    if (true == preskoci)
+                        continue;
+
+                    komande.Add("dowhile");
+                    indeksi.Add(pogodak.Index);
+                }
+
+                /*
+                string sr = @"\s*(if|while|switch|do|for)\s*\((.*)\)\s*({)(.*?[\s\S]*?)(})";
+                //string sr = @"({)(.*?[\s\S]*?)(})";
+                Regex reg = new Regex(sr, RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace | RegexOptions.CultureInvariant);
+                var mit = new MIT(Kod);
+                var l = mit.ListaFunkcija;
+
+                foreach (MIT.Funkcija f in l)
+                {
+                    System.Windows.Forms.MessageBox.Show(f.Tijelo);
+                    foreach (Match M in reg.Matches(f.Tijelo))
                     {
-                        prvaPetlja++;
-                        drugaPetlja++;
+                   
+                        if (!M.Success)
+                            continue;
+                        System.Windows.Forms.MessageBox.Show(M.Value);
+                        System.Windows.Forms.MessageBox.Show(
+                                 M.Groups[1].Value.Trim() + ", " +
+                                 M.Groups[4].Value.Trim() + ", " +
+                                 M.Groups[3].Index.ToString() + ", " +
+                                 M.Groups[5].Index.ToString()
+                             );
+                        komande.Add("kraj");
+                        indeksi.Add(M.Groups[5].Index);
                     }
-                    else if (drugaPetlja >= 0)
-                        drugaPetlja++;
                 }
-                else if (komande[i] == "kraj")
+                 * */
+
+
+
+                
+                patern = new Regex(@"}");
+                foreach (Match pogodak in patern.Matches(Kod))
                 {
-                    if (prvaPetlja == 0)
-                        komande[i] = "krajPetlje";
-                    else if (drugaPetlja == 0)
-                        komande[i] = "krajPetlje";
-                    else if (drugaPetlja > 0)
-                        drugaPetlja--;
-                    else if (prvaPetlja > 0)
-                        prvaPetlja--;
+                    komande.Add("kraj");
+                    indeksi.Add(pogodak.Index);
                 }
-            }
 
-            String str = "";
-            foreach (string  s  in komande)
-            {
-                str += s + "\n";
-            }
 
-            System.Windows.Forms.MessageBox.Show(str);
+                bool biloPromjene = true;
+
+                while (true == biloPromjene)
+                {
+                    biloPromjene = false;
+
+                    for (int i = 0; i < komande.Count - 1; i++)
+                        if (indeksi[i] > indeksi[i + 1])
+                        {
+                            int temp = indeksi[i];
+                            indeksi[i] = indeksi[i + 1];
+                            indeksi[i + 1] = temp;
+
+                            string tempString = komande[i];
+                            komande[i] = komande[i + 1];
+                            komande[i + 1] = tempString;
+
+                            biloPromjene = true;
+                        }
+                }
+
+                int prvaPetlja = -1;
+                int drugaPetlja = -1;
+                for (int i = 0; i < komande.Count; i++)
+                {
+                    if (komande[i] == "petlja")
+                    {
+                        if (prvaPetlja == -1)
+                            prvaPetlja++;
+                        else if (drugaPetlja == -1)
+                            drugaPetlja++;
+                        else
+                            System.Windows.Forms.MessageBox.Show("Kod koji ste unjeli ima trostruko ugnježdenu petlju");
+                    }
+                    else if (komande[i] == "grananje" || komande[i] == "switch")
+                    {
+                        if (prvaPetlja >= 0)
+                        {
+                            prvaPetlja++;
+                            drugaPetlja++;
+                        }
+                        else if (drugaPetlja >= 0)
+                            drugaPetlja++;
+                    }
+                    else if (komande[i] == "kraj")
+                    {
+                        if (prvaPetlja == 0)
+                            komande[i] = "krajPetlje";
+                        else if (drugaPetlja == 0)
+                            komande[i] = "krajPetlje";
+                        else if (drugaPetlja > 0)
+                            drugaPetlja--;
+                        else if (prvaPetlja > 0)
+                            prvaPetlja--;
+                    }
+                }
+
+                String str = "";
+                foreach (string s in komande)
+                {
+                    str += s + "\n";
+                }
+                System.Windows.Forms.MessageBox.Show(str);
+            }
+           
 
             return komande;
         }

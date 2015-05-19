@@ -14,7 +14,8 @@ namespace Refactorer
 		public MIT(string code)
 		{
 			Code = code;
-			string sr = @"\s*(unsigned|signed)?\s+(void|int|char|short|long|float|double|bool|auto|constexpr)\s+(\w+)\s*\((.*)\)\s*{(.*?[\s\S]*?)}";
+			//string sr = @"\s*(unsigned\s+|signed\s+)?(void|int|char|short|long|float|double|bool|auto|constexpr)\s+(\w+)\s*\((.*)\)\s*{(.*?[\s\S]*?)}";
+            string sr = @"\s*(unsigned\s+|signed\s+)?(void|int|char|short|long|float|double|bool|auto|constexpr)\s+(\w+)\s*\((.*)\)\s*{(.*[\s\S]*)}";
 			reg = new Regex(sr, RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace | RegexOptions.CultureInvariant);
 			m = new List<Funkcija>();
 			foreach (Match M in reg.Matches (code))

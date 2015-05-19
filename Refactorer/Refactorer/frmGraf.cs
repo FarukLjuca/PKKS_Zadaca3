@@ -273,17 +273,20 @@ namespace Refactorer
                             g.DrawLine(olovka, sredina, visina - 100, sredina - 5, visina - 105);
                         }
                         prvaKomanda = false;
-
+                        //TODO: Obojiti
+                        Popuni(g, sredina - 10, visina - 100);
                         g.DrawEllipse(olovka, sredina - 10, visina - 100, 20, 20);
                         g.DrawLine(olovka, sredina, visina - 80, sredina, visina - 60);
                         g.DrawLine(olovka, sredina, visina - 60, sredina + 5, visina - 65);
                         g.DrawLine(olovka, sredina, visina - 60, sredina - 5, visina - 65);
 
+                        Popuni(g, sredina - 10, visina - 60);
                         g.DrawEllipse(olovka, sredina - 10, visina - 60, 20, 20);
                         g.DrawLine(olovka, sredina, visina - 40, sredina, visina - 20);
                         g.DrawLine(olovka, sredina, visina - 20, sredina + 5, visina - 25);
                         g.DrawLine(olovka, sredina, visina - 20, sredina - 5, visina - 25);
 
+                        Popuni(g, sredina - 10, visina - 20);
                         g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
                     }
                     else if (brojacGrananja == 1)
