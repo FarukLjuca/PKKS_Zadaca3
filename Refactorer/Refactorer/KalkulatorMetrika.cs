@@ -28,6 +28,68 @@ namespace Refactorer
             return rezultat;
         }
 
+        public int DajBrojForPetlji()
+        {
+            Regex patern = new Regex(@"\bfor *\(");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojWhilePetlji()
+        {
+            Regex patern = new Regex(@"\bwhile *\(");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojElseIfGrananja()
+        {
+            Regex patern = new Regex(@"\belse if *\(");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojElseGrananja()
+        {
+            Regex patern = new Regex(@"\belse *\{");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojCaseGrananja()
+        {
+            Regex patern = new Regex(@"\bcase\b");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojDoGrananja()
+        {
+            Regex patern = new Regex(@"\do *\(");
+            return patern.Matches(Kod).Count;
+        }
+
+        public int DajBrojIfGrananja()
+        {
+            int brojac = 0;
+            Regex patern = new Regex(@"\bif\b");
+            foreach (Match pogodak in patern.Matches(Kod))
+            {
+                bool postojiIndex = false;
+
+                Regex paternDrugi = new Regex(@"\belse if\b");
+                foreach (Match pogodakDrugi in paternDrugi.Matches(Kod))
+                {
+                    if (pogodak.Index == pogodakDrugi.Index + 5)
+                    {
+                        postojiIndex = true;
+                        break;
+                    }
+                }
+
+                if (false == postojiIndex)
+                {
+                    brojac++;
+                }
+            }
+            return brojac;
+        }
+
         private int DajBrojPetlji()
         {
             int brojPetlji = 0;
@@ -254,6 +316,13 @@ namespace Refactorer
                         }
                 }
 
+                //String str = "";
+                //foreach (string s in komande)
+                //{
+                //    str += s + "\n";
+                //}
+                //System.Windows.Forms.MessageBox.Show("Prije sortiranja:\n"+str);
+
                 int prvaPetlja = -1;
                 int drugaPetlja = -1;
                 for (int i = 0; i < komande.Count; i++)
@@ -264,17 +333,14 @@ namespace Refactorer
                             prvaPetlja++;
                         else if (drugaPetlja == -1)
                             drugaPetlja++;
-                        else
-                            System.Windows.Forms.MessageBox.Show("Kod koji ste unjeli ima trostruko ugnježdenu petlju");
                     }
                     else if (komande[i] == "grananje" || komande[i] == "switch")
                     {
                         if (prvaPetlja >= 0)
                         {
                             prvaPetlja++;
-                            drugaPetlja++;
                         }
-                        else if (drugaPetlja >= 0)
+                        if (drugaPetlja >= 0)
                             drugaPetlja++;
                     }
                     else if (komande[i] == "kraj")
@@ -290,12 +356,12 @@ namespace Refactorer
                     }
                 }
 
-                String str = "";
-                foreach (string s in komande)
-                {
-                    str += s + "\n";
-                }
-                System.Windows.Forms.MessageBox.Show(str);
+                //str = "";
+                //foreach (string s in komande)
+                //{
+                //    str += s + "\n";
+                //}
+                //System.Windows.Forms.MessageBox.Show(str);
             }
            
 

@@ -293,6 +293,7 @@ namespace Refactorer
                     {
                         samIf = false;
 
+                        Popuni(g, sredina - 40, visina - 60);
                         g.DrawEllipse(olovka, sredina - 40, visina - 60, 20, 20);
 
                         g.DrawLine(olovka, sredina - 5, visina - 80, sredina - 25, visina - 60);
@@ -306,6 +307,7 @@ namespace Refactorer
                     {
                         samIf = false;
 
+                        Popuni(g, sredina + 20, visina - 60);
                         g.DrawEllipse(olovka, sredina + 20, visina - 60, 20, 20);
 
                         g.DrawLine(olovka, sredina + 5, visina - 80, sredina + 25, visina - 60);
@@ -319,6 +321,7 @@ namespace Refactorer
                     {
                         samIf = false;
 
+                        Popuni(g, sredina - 70, visina - 60);
                         g.DrawEllipse(olovka, sredina - 70, visina - 60, 20, 20);
 
                         g.DrawLine(olovka, sredina - 5, visina - 80, sredina - 55, visina - 60);
@@ -332,6 +335,7 @@ namespace Refactorer
                     {
                         samIf = false;
 
+                        Popuni(g, sredina + 50, visina - 60);
                         g.DrawEllipse(olovka, sredina + 50, visina - 60, 20, 20);
 
                         g.DrawLine(olovka, sredina + 5, visina - 80, sredina + 55, visina - 60);
@@ -366,6 +370,7 @@ namespace Refactorer
                     }
                     prvaKomanda = false;
 
+                    Popuni(g, sredina - 10, visina - 20);
                     g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
 
                     if (visinaPetlje1 == 0)
@@ -393,11 +398,13 @@ namespace Refactorer
                         g.DrawLine(olovka, sredina, visina - 60, sredina + 5, visina - 65);
                         g.DrawLine(olovka, sredina, visina - 60, sredina - 5, visina - 65);
 
+                        Popuni(g, sredina - 10, visina - 60);
                         g.DrawEllipse(olovka, sredina - 10, visina - 60, 20, 20);
                         g.DrawArc(olovka, sredina - 50, visinaPetlje2, 120, visina - visinaPetlje2 - 50, -90, 180);
                         g.DrawLine(olovka, sredina + 10, visinaPetlje2, sredina + 15, visinaPetlje2 - 5);
                         g.DrawLine(olovka, sredina + 10, visinaPetlje2, sredina + 15, visinaPetlje2 + 5);
 
+                        Popuni(g, sredina - 10, visina - 20);
                         g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
                         g.DrawArc(olovka, sredina - 80, visinaPetlje2, 140, visina - visinaPetlje2 - 10, 90, 180);
                         g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);
@@ -411,11 +418,13 @@ namespace Refactorer
                         g.DrawLine(olovka, sredina, visina - 60, sredina + 5, visina - 65);
                         g.DrawLine(olovka, sredina, visina - 60, sredina - 5, visina - 65);
 
+                        Popuni(g, sredina - 10, visina - 60);
                         g.DrawEllipse(olovka, sredina - 10, visina - 60, 20, 20);
                         g.DrawArc(olovka, sredina - 60, visinaPetlje1, 140, visina - visinaPetlje1 - 50, -90, 180);
                         g.DrawLine(olovka, sredina + 10, visinaPetlje1, sredina + 15, visinaPetlje1 - 5);
                         g.DrawLine(olovka, sredina + 10, visinaPetlje1, sredina + 15, visinaPetlje1 + 5);
 
+                        Popuni(g, sredina - 10, visina - 20);
                         g.DrawEllipse(olovka, sredina - 10, visina - 20, 20, 20);
                         g.DrawArc(olovka, sredina - 90, visinaPetlje1, 160, visina - visinaPetlje1 - 10, 90, 180);
                         g.DrawLine(olovka, sredina - 10, visina - 10, sredina - 15, visina - 5);

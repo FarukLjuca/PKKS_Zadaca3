@@ -22,8 +22,39 @@ namespace Refactorer
         {
             KalkulatorMetrika kalkulator = new KalkulatorMetrika(tbxKod.Text);
             McCabeRezultat rezultat = kalkulator.DajMcCabePodatke();
+            String interp = "";
 
-            MessageBox.Show("McCabe kompleksnost koda koji ste unijeli iznosi: " + rezultat.Kompleksnost.ToString());
+            if (rezultat.Kompleksnost <= 5)
+            {
+                interp = "Program je jednostavan i lahko ga je razumjeti";
+            }
+            else if (rezultat.Kompleksnost <= 10)
+            {
+                interp = "Program nije težak";
+            }
+            else if (rezultat.Kompleksnost <= 20)
+            {
+                interp = "Program ima kompleksnost veću od preporučene";
+            }
+            else if (rezultat.Kompleksnost <= 50)
+            {
+                interp = "Program ima veliku kompleksnost";
+            }
+            else
+            {
+                interp = "Program je nestabilan";
+            }
+
+            MessageBox.Show("McCabe kompleksnost koda koji ste unijeli iznosi: " + rezultat.Kompleksnost.ToString() +
+                "\n\nLingvistička interpretacija: " + interp +
+                "\n\nStatistike programa:" +
+                "\nBroj for pelji: " + kalkulator.DajBrojForPetlji() +
+                "\nBroj while pelji: " + kalkulator.DajBrojWhilePetlji() +
+                "\nBroj do-while pelji: " + kalkulator.DajBrojDoGrananja() +
+                "\nBroj if uslova: " + kalkulator.DajBrojIfGrananja() +
+                "\nBroj else-if uslova: " + kalkulator.DajBrojElseIfGrananja() +
+                "\nBroj else uslova: " + kalkulator.DajBrojElseGrananja() +
+                "\nBroj case uslova: " + kalkulator.DajBrojCaseGrananja());
         }
 
         private void llbPravila_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
